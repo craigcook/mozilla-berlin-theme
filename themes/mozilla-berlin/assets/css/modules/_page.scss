@@ -1,0 +1,139 @@
+.post-intro {
+	background-size: cover;
+	background-position: center;
+}
+
+.intro-text-wrapper {
+	padding-top: 20em;
+	padding-bottom: 3em;
+	margin-bottom: 1.4em;
+	color: $white;
+	font-size: 1.45em;
+	h1 {
+		font-size: 2.45em;
+        line-height: 1.1em;
+        margin-bottom: .4em;
+	}
+}
+
+.two-images {
+	.left {
+		img {
+			margin-bottom: $grid-gutter-width;
+			@media (min-width: $screen-md-min) {
+				margin-bottom: 0;
+			}
+		}
+	}
+}
+
+.share-wrapper {
+	font-size: .7em;
+	margin-top: 0;
+    margin-bottom: $grid-gutter-width/2;
+	@media (min-width: $screen-md-min) {
+		margin-bottom: -100%;
+		margin-top: $grid-gutter-width/2;
+	}
+	a {
+		text-align: center;
+		text-decoration: none;
+		color: $typography-primary;
+		opacity: .5;
+		margin-bottom: $grid-gutter-width/1.2;
+		display: block;
+		line-height: 1em;
+		display: inline-block;
+		margin-right: $grid-gutter-width;
+		@media (min-width: $screen-md-min) {
+			display: block;
+		}
+		i {
+			font-size: 1.6em;
+			margin-top: $grid-gutter-width/4;
+			display: block;
+		}
+	}
+}
+
+.label {
+    font-weight: 700;
+    font-size: 2em;
+	line-height: 1.2em;
+    font-family: 'Zilla Slab', serif;
+}
+
+.element-margin {
+//    margin-top: $grid-gutter-width*2;
+    margin-bottom: $grid-gutter-width;
+}
+
+.page-content {
+	line-height: 1.55em;
+	h1,h2,h3,h4,h5 {
+		font-family: 'Open Sans', sans-serif;
+	}
+    .element-margin {
+        &:first-child {
+            margin-top: 0;
+        }
+    }
+	.slick-arrow {
+		&.slick-prev {
+			left: $grid-gutter-width/3;
+		}
+		&.slick-next {
+			right: $grid-gutter-width/3;
+		}
+	}
+	.slick-dots {
+		margin-top: $grid-gutter-width/3;
+	}
+	
+}
+
+.intro-text {
+	font-size: 1.55em;
+	line-height: 1.214em;
+	font-family: 'Zilla Slab', sans-serif;
+	font-weight: 300;
+	font-style: italic;
+}
+
+.infobox {
+    color: $white;
+    font-weight: 700;
+    font-size: 1.15em;
+    line-height: 1.5em;
+    div {
+        margin-left: 8px;
+    }
+    .headline {
+        font-family: 'Zilla Slab', sans-serif;
+        font-size: 1.8em;
+        line-height: 1.6em;
+        display: inline;
+        background-color: $black;
+        box-shadow: 8px 0 0 $black, -8px 0 0 $black;
+		box-decoration-break: clone;
+    }
+    p {
+        display: inline;
+		background-color: rgba($black,.6);
+        box-shadow: 8px 0 0 rgba($black,.6), -8px 0 0 rgba($black,.6);
+		box-decoration-break: clone;
+    }
+    a {
+        font-size: .8em;
+        line-height: 2em;
+    }
+}
+
+.background-image {
+	background-attachment: scroll;
+	background-size: cover;
+	background-position: center;
+	@media (min-width: $screen-sm-min) {
+		background-attachment: fixed;
+	}
+}

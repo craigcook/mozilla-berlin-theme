@@ -1,0 +1,50 @@
+.grid-box {
+	position: relative;
+}
+
+.social-media-wrapper {
+	.headline {
+		font-weight: 400;
+		margin-bottom: $grid-gutter-width/2;
+		font-size: 1.55em;
+	}
+}
+
+.social-media-twitter {
+	padding: $grid-gutter-width/2;
+	background: #f8f8f8;
+	border: 1px solid #dfdfdf;
+	font-size: .9em;
+	height: 100%;
+	a {
+		color: $typography-primary;
+		text-decoration: none;
+	}
+	.grid-content {
+		.block-link {
+			i {
+				font-size: 1.2em;
+				line-height: 0.2em;
+				color: $twitter;
+				margin-right: $grid-gutter-width/5;
+			}
+			display: block;
+			margin-bottom: $grid-gutter-width/3;
+		}
+	}
+	.twitter-image {
+		margin: 0 0 $grid-gutter-width/3 0;
+	}
+	.full-link {
+		position: absolute;
+		z-index: 1;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+	}
+}
+
+.social-box {
+	margin-bottom: $grid-gutter-width;
+}

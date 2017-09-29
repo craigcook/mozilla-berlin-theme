@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="17px" height="30px" viewBox="0 0 17 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 46.1 (44463) - http://www.bohemiancoding.com/sketch -->
+    <title>A</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="slider-left" transform="translate(-30.000000, -27.000000)" fill="#000000">
+            <path d="M44.676,56.4 C45.204,56.4 45.78,56.208 46.164,55.776 C46.98,54.96 46.98,53.664 46.164,52.848 L35.076,41.712 L46.164,30.576 C46.98,29.76 46.98,28.464 46.164,27.648 C45.348,26.784 44.004,26.784 43.188,27.648 L30.612,40.224 C29.796,41.04 29.796,42.384 30.612,43.2 L43.188,55.776 C43.62,56.208 44.148,56.4 44.676,56.4 Z" id="A"></path>
+        </g>
+    </g>
+</svg>

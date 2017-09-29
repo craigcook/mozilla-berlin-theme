@@ -1,0 +1,234 @@
+.slick-arrow {
+	position: absolute;
+	z-index: 5;
+	top: 50%;
+	width: 82px;
+	height: 82px;
+	border: 0;
+	background: none;
+	font-size: 0;
+	@include prefix ( border-radius, 1000px, moz webkit o);
+	@include prefix ( transform, translate(0, -50%), moz webkit o);
+	background-image: url(assets/img/chevron.svg);
+	background-repeat: no-repeat;
+	background-position: 46% 50%;
+	&.slick-prev {
+		left: -$grid-gutter-width*2.5;
+	}
+	&.slick-next {
+		right: -$grid-gutter-width*2.5;
+		@include prefix ( transform, rotate(-180deg) translate(0, 50%), moz webkit o);
+	}
+}
+
+.slick-dots {
+	text-align: center;
+	li {
+		display: inline-block;
+		margin: 0 4px;
+		button {
+			border: 0;
+			font-size: 0;
+			height: 12px;
+			width: 12px;
+			background: $dot-background;
+			border: 1px solid $dot-border;
+			padding: 0;
+			@include prefix ( border-radius, 1000px, moz webkit o);
+		}
+		&.slick-active {
+			button {
+				background: $black;
+			}
+		}
+	}
+}
+
+.slider-featured {
+	.slide {
+		position: relative;
+	}
+	a.full {
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		z-index: 1;
+	}
+	.white-box {
+		// max-width: 45%;
+		width: 85%;
+		position: absolute;
+		bottom: 140px;
+		padding: $grid-gutter-width/1.5 $grid-gutter-width $grid-gutter-width/2;
+		font-size: 1.111em;
+		z-index: 2;
+		@media (min-width: $screen-md-min) {
+			width: 45%;
+			bottom: 0;
+		}
+		.headline {
+			font-size: 2.300em;
+		}
+		a {
+//			font-size: 0.800em;
+//			font-weight: 700;
+		}
+	}
+	.additional-teaser-wrapper {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		padding-left: 0;
+		font-size: 0.778em;
+		color: $white;
+		padding-bottom: $grid-gutter-width/2;
+		z-index: 2;
+		@media (min-width: $screen-md-min) {
+			padding-left: 45%;
+		}
+	}
+	.additional-teaser {
+		float: left;
+		width: 40%;
+		margin: 0 5%;
+		.headline {
+			font-size: 1.429em;
+		}
+		a {
+//			font-size: 1.143em;
+//			font-weight: 700;
+		}
+		.no-style {
+			color: $white;
+		}
+	}
+//	.slide-article {
+	.inner {
+		background-size: cover;
+		background-position: center;
+		overflow: hidden;
+		img {
+			@include prefix ( transition, all .75s ease, moz webkit o )
+		}
+		&:hover {
+			img {
+				@include prefix ( transform, scale(1.1), moz webkit o )
+			}
+		}
+	}
+		.inner,
+		.video-wrapper {
+			min-height: 420px;
+			img {
+				display: none;
+			}
+			@media (min-width: $screen-md-min) {
+				min-height: none;
+				img {
+					display: block;
+				}
+			}
+		}
+//	}
+	.video-wrapper {
+		padding-bottom: 5.25%;
+		background: $black;
+		.embed-container {
+			position: absolute;
+			top: 50%;
+			width: 100%;
+			@include prefix(transform, translate(0%,-50%), moz webkit o);
+			@media (min-width: $screen-md-min) {
+				position: relative;
+				top: auto;
+				@include prefix(transform, translate(0%,0%), moz webkit o);
+			}
+		}
+	}
+	.embed-container {
+		
+	}
+	.video-description {
+		position: absolute;
+		bottom: 0;
+		width: 100%;
+//		background: $black;
+		color: $white;
+		padding: 13px 20px;
+		font-size: 0.889em;
+		.headline {
+			font-size: 1.444em;
+			line-height: 1em;
+			float: left;
+		}
+		a {
+			//			color: $lightblue;
+			text-decoration: underline;
+			float: right;
+		}
+		@include clearfix;
+	}
+	.slick-arrow {
+		background-color: rgba(#fff, .45);
+		&.slick-prev {
+			left: $grid-gutter-width;
+		}
+		&.slick-next {
+			right: $grid-gutter-width;
+		}
+	}
+	.overlay {
+		background: #000;
+		position: absolute;
+		z-index: 2;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		opacity: .5;
+//		pointer-events: none;
+		@include prefix( transition, all .5s ease, moz webkit o )
+	}
+	.additional-teaser-wrapper,
+	.white-box,
+	.video-description {
+		opacity: 0;
+		@include prefix( transition, all .5s ease, moz webkit o );
+	}
+	.ani {
+		.overlay {
+			opacity: 0;
+			pointer-events: none;
+		}
+		.additional-teaser-wrapper,
+		.white-box,
+		.video-description {
+			opacity: 1;
+			@include prefix( transition, all .5s ease, moz webkit o );
+		}
+	}
+}
+
+.slider-products-wrapper {
+	display: none;
+	&.active {
+		display: block;
+	}
+	.slick-list {
+		padding-right: 40px;
+		@media (min-width: $screen-sm-min) {
+			padding-right: 0;
+		}
+	}
+}
+
+.slick-slider {
+	* {
+		&:focus {
+			outline: none;
+		}
+	}
+}

@@ -1,0 +1,14 @@
+.post-loop {
+	article {
+		margin: 4em 0;
+		&:first-child {
+			margin-top: 0;
+		}
+	}
+	h2 {
+		margin-top: 0;
+	}
+	.attachment-post-thumbnail {
+		margin: 0 0 15px;
+	}
+}

@@ -1,0 +1,69 @@
+footer {
+	background: $black;
+	margin-top: $grid-gutter-width*3;
+	padding-top: $grid-gutter-width*2;
+	padding-bottom: $grid-gutter-width*4;
+	color: $white;
+	font-size: .8em;
+	a {
+		color: $white;
+		text-decoration: none;
+	}
+	.headline {
+		font-family: "Open Sans", sans-serif;
+		margin-bottom: $grid-gutter-width/2;
+	}
+	.meta {
+//		opacity: .7;
+		font-size: .8em;
+		li {
+			display: inline-block;
+			margin: $grid-gutter-width/2.5;
+			&:first-child {
+				margin-left: 0;
+			}
+			&:last-child {
+				margin-right: 0;
+			}
+		}
+		&:last-child {
+			a {
+				opacity: .8;
+			}
+		}
+	}
+    .left {
+        margin-bottom: $grid-gutter-width;
+        margin-top: $grid-gutter-width;
+        @media (min-width: $screen-sm-min) {
+			margin-top: 0;
+		}
+    }
+	.row {
+		&:first-child {
+			margin-bottom: $grid-gutter-width*2;
+			li {
+				margin: $grid-gutter-width/3 0;
+				a {
+					opacity: .8;
+				}
+			}
+		}
+	}
+	.soma-wrapper {
+		margin-top: $grid-gutter-width;
+		font-size: .85em;
+		a {
+			margin: 0 $grid-gutter-width/2.5;
+			&:first-child {
+				margin-left: 0;
+			}
+			&:last-child {
+				margin-right: 0;
+			}
+		}
+	}
+	.lang-text {
+		margin-right: $grid-gutter-width/3;
+	}
+}

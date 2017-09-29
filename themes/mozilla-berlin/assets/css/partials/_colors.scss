@@ -1,0 +1,36 @@
+/*--------------------------------------------------------------
+# Theme Colors
+--------------------------------------------------------------*/
+
+$lightblue: #88d1f1;
+$green: #aefb4a;
+$amethyst: #9b59b6;
+$wisteria: #8e44ad;
+$cyan: #009ee0;
+$cyan-darken: #0079ac;
+$grey: #b4b4b4;
+
+$typography-grey: #333333;
+
+$dot-background: #d8d8d8;
+$dot-border: #979797;
+
+$white: #ffffff;
+$black: #000000;
+
+$twitter: #1da1f2;
+
+/*--------------------------------------------------------------
+# Color Assignment
+--------------------------------------------------------------*/
+
+$main-color: $cyan;
+$main-color-darken: $cyan-darken;
+
+$typography-primary: $typography-grey;
+$typography-link: $main-color;
+$typography-hover: $main-color-darken;
+
+$button-color: $main-color;
+$button-color-border: $main-color-darken;
+$button-color-hover: $main-color-darken;

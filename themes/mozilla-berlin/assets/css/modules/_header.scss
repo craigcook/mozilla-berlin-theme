@@ -1,0 +1,144 @@
+header {
+	margin-bottom: 22px;
+	font-size: 0.889em;
+	.header-inner {
+		padding: 25px 0 15px;
+		// border-bottom: 2px solid $black;
+	}
+	.logo {
+		display: inline-block;
+		position: relative;
+		z-index: 110;
+	}
+	.nav-wrappper {
+		position: relative;
+		float: right;
+		margin: 10px 0;
+		nav {
+			position: fixed;
+			height: 100%;
+			right: -200%;
+			width: 100%;
+			top: 0;
+			background: $white;
+			z-index: 100;
+			padding: 20%;
+			font-size: 2em;
+			@media (min-width: $screen-sm-min) {
+				position: relative;
+				top: auto;
+				height: auto;
+				right: auto;
+				width: auto;
+				font-size: 1em;
+				padding: 0;
+			}
+		}
+		ul {
+			position: relative;
+			left: 0%;
+			width: auto;
+			@include clearfix;
+			@media (min-width: $screen-sm-min) {
+				
+			}
+		}
+		&.active {
+			nav {
+				right: 0%;
+				width: 100%;
+				li {
+					margin: $grid-gutter-width 0;
+				}
+			}
+			.toggle-nav {
+				
+				span {
+					background: none;
+					&:after {
+						top: 0;
+						@include prefix(transform, rotate(45deg), webkit moz o);
+					}
+					&:before {
+						top: 0;
+						@include prefix(transform, rotate(-45deg), webkit moz o);
+					}
+				}
+			}
+		}
+		nav>ul>li {
+			float: none;
+			position: relative;
+			margin: 0 $grid-gutter-width/2;
+			&:first-child {
+				margin-left: 0;
+			}
+			&:last-child {
+				margin-right: 0;
+			}
+			@media (min-width: $screen-sm-min) {
+				float: left;
+			}
+			ul {
+				display: none;
+				position: absolute;
+				z-index: 5;
+			}
+			&:hover {
+				ul {
+					display: block;
+				}
+			}
+		}
+		.current_page_parent,
+		.current-menu-item {
+//			background: $main-color-darken;
+		}
+		a {
+			display: block;
+			width: 100%;
+			text-decoration: none;
+			color: $black;
+			font-weight: 700;
+			@media (min-width: $screen-sm-min) {
+				width: auto;
+			}
+		}
+		.toggle-nav {
+			z-index: 120;
+			display: block;
+			position: absolute;
+			right: 0;
+//			top: -100%;
+			height: 40px;
+			width: 40px;
+			background: $white;
+			top: -14px;
+			span {
+				position: absolute;
+				width: 75%;
+				height: 3px;
+				background: $black;
+				left: 50%;
+				top: 50%;
+				@include prefix(transform, translate(-50%,-50%), webkit moz o);
+				&:before,
+				&:after {
+					content: '';
+					position: absolute;
+					width: 100%;
+					height: 3px;
+					background: $black;
+					top: -9px;
+				}
+				&:after {
+					top: auto;
+					bottom: -9px;
+				}
+			}
+			@media (min-width: $screen-sm-min) {
+				display: none;
+			}
+		}
+	}
+}

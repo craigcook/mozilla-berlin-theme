@@ -1,0 +1,16 @@
+body#tinymce.wp-editor { 
+    padding: 0 15px !important;
+	max-width: 850px;
+}
+body#tinymce.wp-editor blockquote { 
+    margin: 0;
+    padding: 0 15px;
+    border-left: 3px solid #e46450;
+}
+body#tinymce.wp-editor .wp-caption-dd {
+	padding-top: 0.5em;
+    margin: 0;
+    text-align: left;
+    font-size: 0.75em;
+    line-height: 1.5em;
+}

@@ -1,0 +1,23 @@
+input,
+textarea {
+//	width: 100%;
+	padding: 6px 6px;
+//	border: 1px solid $lightblue;
+	@include prefix(border-radius, $border-radius, moz webkit o);
+}
+
+.button,
+input[type="submit"] {
+	width: auto;
+	background: $lightblue;
+	border: $lightblue 0 solid;
+	color: $white;
+	padding: 7px 13px 6px;
+	cursor: pointer;
+//	text-transform: uppercase;
+	text-decoration: none;
+	&:hover {
+		background: $lightblue;
+		color: $white;
+	}
+}

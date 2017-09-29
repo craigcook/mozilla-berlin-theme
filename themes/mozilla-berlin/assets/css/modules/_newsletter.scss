@@ -1,0 +1,114 @@
+.newsletter-wrapper {
+	background: darken($lightblue, 20);
+	padding: $grid-gutter-width*.8 $grid-gutter-width*1.5;
+	margin-bottom: $grid-gutter-width*2;
+	margin-top: $grid-gutter-width*1.5;
+	font-size: 1.111em;
+	line-height: 1.4em;
+	.left {
+		margin-top: $grid-gutter-width;
+	}
+	.headline {
+		font-size: 1.400em;
+	}
+	a {
+		color: $typography-primary;
+	}
+	label {
+//		display: none;
+	}
+	img {
+		float: left;
+		margin-right: 20px;
+	}
+	input[type="email"] {
+		margin-top: $grid-gutter-width/6;
+		background: $black;
+		width: 100%;
+		padding-left: 4%;
+		color: $white;
+		margin-bottom: $grid-gutter-width/4;
+		color: $white;
+		border: 0px solid darken($lightblue, 70);
+	}
+	button,
+	input[type="submit"] {
+		background: none;
+		border: 2px solid darken($lightblue, 70);
+		width: 100%;
+		line-height: 2em;
+		margin-top: $grid-gutter-width/6;
+		@include prefix(border-radius, 5px, moz webkit o);
+	}
+	::-webkit-input-placeholder {
+		/* WebKit, Blink, Edge */
+		color: $lightblue;
+		opacity: 1;
+	}
+	:-moz-placeholder {
+		/* Mozilla Firefox 4 to 18 */
+		color: $lightblue;
+		opacity: 1;
+	}
+	::-moz-placeholder {
+		/* Mozilla Firefox 19+ */
+		color: $lightblue;
+		opacity: 1;
+	}
+	:-ms-input-placeholder {
+		/* Internet Explorer 10-11 */
+		color: $lightblue;
+		opacity: 1;
+	}
+	::-ms-input-placeholder {
+		/* Microsoft Edge */
+		color: $lightblue;
+		opacity: 1;
+	}
+	.newsletter-inner {
+		padding-right: 10%;
+		p {
+			margin: 0;
+		}
+	}
+	label {
+		font-size: .7em;
+		line-height: 1em;
+		display: inline-block;
+	}
+}
+
+
+
+
+.newsletter_errors {
+    display: none; /* hide by default */
+    margin-bottom: 20px;
+    box-shadow: 0 0 0 1px #ffffff; // incase it's on a black background
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.1); // incase it's on a white background
+    border: 1px solid #c00;
+
+}
+
+.newsletter_errors:last-child {
+    margin-bottom: 0;
+}
+
+.newsletter_thanks {
+    display: none;
+}
+
+
+button {
+    cursor: pointer;
+}
+
+button::-moz-focus-inner,
+input[type="button"]::-moz-focus-inner,
+input[type="submit"]::-moz-focus-inner,
+input[type="reset"]::-moz-focus-inner {
+    padding: 0 !important;
+    border: 0 none !important;
+    cursor: pointer;
+}

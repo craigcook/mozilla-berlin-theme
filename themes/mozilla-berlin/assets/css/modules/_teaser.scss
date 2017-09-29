@@ -1,0 +1,303 @@
+
+.headline-divider {
+	position: relative;
+	margin-top: $grid-gutter-width*3;
+	margin-bottom: $grid-gutter-width;
+	.headline {
+		background: $black;
+		padding: 0px 10px 2px;
+		width: 100%;
+		display: inline-block;
+		color: $white;
+		padding-left: $grid-gutter-width;
+		font-family: 'Zilla Slab', sans-serif;
+		font-size: 1.2em;
+		@media (min-width: $screen-sm-min) {
+			width: 50%;
+		}
+	}
+	&.small {
+		.headline {
+			width: 25%;
+		}
+	}
+	.pixel-bar {
+		background: $black;
+		position: absolute;
+		width: 100%;
+		height: 1px;
+	}
+//	&:before {
+//		content: '';
+//		background: $black;
+//		position: absolute;
+//		width: 100%;
+//		height: 1px;
+//	}
+	a {
+		margin: 8px 0 0;
+		padding: 0 20px 0 0;
+		float: right;
+		text-decoration: none;
+		font-weight: 700;
+		background-image: url(assets/img/arrow.svg);
+		background-repeat: no-repeat;
+		background-position: right center;
+	}
+}
+
+.filter {
+	padding-left: $grid-gutter-width;
+	margin: 0 0 $grid-gutter-width;
+	font-weight: 700;
+	font-size: .96em;
+	.active {
+		color: $black;
+	}
+	li {
+		display: inline-block;
+		margin-right: $grid-gutter-width;
+		color: #bbb;
+		&:hover {
+			cursor: pointer;
+		}
+	}
+}
+
+.teaser {
+	font-size: 1.111em;
+	img {
+		@include prefix ( transition, all .75s ease, moz webkit o )
+		&:hover {
+			@include prefix ( transform, scale(1.1), moz webkit o )
+		}
+	}
+	.headline {
+		font-size: 1.400em;
+		margin-top: $grid-gutter-width/2;
+	}
+	a {
+		overflow: hidden;
+		font-size: 0.900em;
+		text-decoration: none;
+		padding: 5px 0;
+		display: inline-block;
+		width: 100%;
+		border-bottom: 1px $lightblue solid;
+		&.no-style {
+			border-bottom: 0;
+			padding: 0;
+		}
+	}
+}
+
+.show-more-people {
+    display: table;
+    margin: auto;
+    &.active {
+        display: none;
+    }
+}
+
+.more-people {
+    max-height: 0;
+    overflow: hidden;
+    @include prefix(transition, all ease 1.5s, moz webkit o);
+    &.active {
+        max-height: 50000px;
+    }
+}
+
+.teaser-whitebox-overlap {
+	font-size: 1.111em;
+	margin-bottom: $grid-gutter-width*1.5;
+	.headline {
+		font-size: 1.400em;
+	}
+	.inner {
+		position: relative;
+		overflow: hidden;
+		a {
+			display: block;
+		}
+	}
+	.white-box {
+		position: absolute;
+		bottom: -1px;
+		left: -1px;
+		width: 65%;
+		padding: 20px;
+	}
+	a {
+		font-size: 0.900em;
+	}
+	.soma-wrapper {
+		margin-top: $grid-gutter-width/2;
+		a {
+			color: $typography-primary;
+			display: inline-block;
+			margin: 0 $grid-gutter-width/3;
+			&:first-child {
+				margin-left: 0;
+			}
+			&:last-child {
+				margin-right: 0;
+			}
+		}
+	}
+	img {
+//		display: inline-block;
+		@include prefix ( transition, all .75s ease, moz webkit o )
+		&:hover {
+			@include prefix ( transform, scale(1.1), moz webkit o )
+		}
+	}
+}
+.white-box-after {
+	padding: $grid-gutter-width $grid-gutter-width 0;
+	width: 85%;
+	margin-top: -1px;
+	z-index: 3;
+	position: relative;
+	background: $white;
+	p {
+		&:first-child {
+			margin-top: 0;
+		}
+	}
+}
+
+.teaser-colored {
+	margin-bottom: $grid-gutter-width;
+	.inner {
+		height: 175px;
+		padding: $grid-gutter-width/2 $grid-gutter-width/2+8;
+		a {
+			text-decoration: none;
+		}
+	}
+	.headline {
+		display: inline;
+		color: $black;
+		background-color: #aefb4a;
+		box-shadow: 8px 0 0 #aefb4a, -8px 0 0 #aefb4a;
+		box-decoration-break: clone;
+		font-size: 1.556em;
+		line-height: 1.35em;
+	}
+	> a.arrow {
+		text-decoration: none;
+		padding: 10px 0;
+		display: inline-block;
+		width: 100%;
+		border-bottom: 1px $lightblue solid;
+	}
+}
+
+.teaser-whitebox-large {
+	height: 400px;
+	position: relative;
+	background-size: cover;
+	margin: $grid-gutter-width*1.5 $grid-gutter-width $grid-gutter-width*1.5 0;
+	font-size: 1.55em;
+	width: 100%;
+	overflow: hidden;
+	&:hover {
+		.background {
+			@include prefix ( transform, scale(1.1), moz webkit o )
+		}
+	}
+	.background {
+		height: 100%;
+		width: 100%;
+		position: absolute;
+		left: 0;
+		top: 0;
+		background-size: cover;
+		background-position: center;
+		z-index: 1;
+		@include prefix ( transition, all .75s ease, moz webkit o )
+	}
+	.white-box {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		padding: $grid-gutter-width;
+		width: 100%;
+		z-index: 2;
+		@media (min-width: $screen-sm-min) {
+			width: 60%;
+		}
+		@media (min-width: $screen-md-min) {
+			width: 44%;
+		}
+		.headline {
+			color: $white;
+			font-size: 1.72em;
+			margin-left: 8px;
+			display: inline;
+			background-color: #6d7c23;
+			box-shadow: 8px 0 0 #6d7c23, -8px 0 0 #6d7c23;
+			box-decoration-break: clone;
+		}
+	}
+}
+
+.additional-links {
+    .row,
+    .column {
+        height: 100%;
+    }
+}
+
+.teaser-whitebox-background {
+	height: 254px;
+	position: relative;
+	// margin-bottom: $grid-gutter-width;
+	overflow: hidden;
+    margin-top: $grid-gutter-width;
+    @media (min-width: $screen-md-min) {
+        height: 100%;
+        margin-top: 0;
+    }
+	&:hover {
+		.background {
+			@include prefix ( transform, scale(1.1), moz webkit o )
+		}
+	}
+	.background {
+		height: 100%;
+		width: 100%;
+		position: absolute;
+		left: 0;
+		top: 0;
+		background-size: cover;
+		background-position: center;
+		z-index: 1;
+		@include prefix ( transition, all .75s ease, moz webkit o )
+	}
+	&:hover {
+		background-size: cover 110%;
+	}
+	.headline {
+		font-size: 1.2em;
+		margin-bottom: 5px;
+	}
+	a {
+		font-size: 0.900em;
+	}
+	.white-box {
+		position: absolute;
+		width: 85%;
+		left: 0;
+		bottom: 0;
+		z-index: 2;
+		padding: $grid-gutter-width/2;
+	}
+}
+
+.arrow {
+	background-image: url(assets/img/arrow.svg);
+	background-repeat: no-repeat;
+	background-position: right center;
+}

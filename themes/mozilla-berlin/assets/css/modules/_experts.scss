@@ -1,0 +1,370 @@
+.light {
+	.experts-intro {
+		font-size: .75em;
+		@media (min-width: $screen-md-min) {
+			font-size: 1;
+		}
+		.headline {
+			display: inline-block;
+			font-size: 5.6em;
+			line-height: 1em;
+			background: $green;
+			margin-left: 12px;
+			box-shadow: 12px 0 0 $green, -12px 0 0 $green;
+			box-decoration-break: clone;
+			margin-top: $grid-gutter-width;
+			margin-bottom: $grid-gutter-width/2;
+		}
+		p {
+			font-size: 2em;
+			line-height: 1.2em;
+			font-family: 'Zilla Slab', sans-serif;
+			font-weight: 700;
+			margin-bottom: $grid-gutter-width*1.5;
+		}
+	}
+
+	.expert-wrapper {
+		margin-bottom: $grid-gutter-width*3;
+		position: relative;
+		@media (min-width: $screen-md-min) {
+			margin-bottom: 0;
+		}
+		.img-wrapper {
+			position: relative;
+			.headline {
+				position: absolute;
+				left: $grid-gutter-width/1.25;
+				bottom: $grid-gutter-width/2;
+				display: inline;
+				color: $black;
+				background-color: #aefb4a;
+				box-shadow: 8px 0 0 #aefb4a, -8px 0 0 #aefb4a;
+				box-decoration-break: clone;
+				font-size: 1.556em;
+				line-height: 1.35em;
+				transition: all ease 1s;
+				@include prefix(transition, all ease 1s, moz webkit o);
+			}
+		}
+		> a {
+			text-decoration: none;
+			padding: 10px 0;
+			display: inline-block;
+			width: 100%;
+			border-bottom: 1px $lightblue solid;
+		}
+		.under-name {
+			font-size: .8em;
+			margin-top: 0;
+			margin-bottom: $grid-gutter-width/2;
+		}
+		.show-more-wrapper {
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			z-index: 3;
+			text-align: center;
+			width: 100%;
+			display: block;
+			.button {
+				display: inline-block;
+			}
+			@media (min-width: $screen-md-min) {
+				display: none;
+			}
+			.less {
+				display: none;
+			}
+			&.active {
+				.more {
+					display: none;
+				}
+				.less {
+					display: inline-block;
+				}
+			}
+		}
+		.overlay {
+			position: relative;
+			top: $grid-gutter-width;
+			padding: $grid-gutter-width/2;
+			background: rgba($white, .8);
+			min-height: 100%;
+			width: 100%;
+			opacity: 1;
+			z-index: 1;
+			@include prefix(transition, all ease 1s, moz webkit o);
+			height: 180px;
+			overflow: hidden;
+			padding-bottom: 50px;
+
+			&:after {
+				content: '';
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				width: 100%;
+				height: 80px;
+				z-index: 1;
+				/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,ffffff+100&0+0,1+92 */
+				background: -moz-linear-gradient(top, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 92%, rgba(255,255,255,1) 100%); /* FF3.6-15 */
+				background: -webkit-linear-gradient(top, rgba(255,255,255,0) 0%,rgba(255,255,255,1) 92%,rgba(255,255,255,1) 100%); /* Chrome10-25,Safari5.1-6 */
+				background: linear-gradient(to bottom, rgba(255,255,255,0) 0%,rgba(255,255,255,1) 92%,rgba(255,255,255,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+			}
+			@media (min-width: $screen-md-min) {
+				height: auto;
+				overflow: visible;
+				padding-bottom: 0;
+			}
+			.title {
+				display: none;
+				padding: 0 $grid-gutter-width/2;
+				background: $green;
+				font-family: 'Zilla Slab', sans-serif;
+				font-weight: 700;
+				font-size: 1.55em;
+				margin: $grid-gutter-width $grid-gutter-width/2*-1 $grid-gutter-width/1.5;
+				@media (min-width: $screen-md-min) {
+					display: block;
+				}
+			}
+			@media (min-width: $screen-md-min) {
+				position: absolute;
+				opacity: 0;
+			}
+			@media (min-width: $screen-lg-min) {
+				padding: $grid-gutter-width;
+				.title {
+					padding: 0 $grid-gutter-width;
+					margin: $grid-gutter-width $grid-gutter-width*-1 $grid-gutter-width/1.5;
+				}
+			}
+			.soma-wrapper {
+				padding: 0;
+				background: rgba($white,.8);
+				display: inline-block;
+	//			float: right;
+				@media (min-width: $screen-md-min) {
+					padding: $grid-gutter-width/3 $grid-gutter-width/3 $grid-gutter-width/10 $grid-gutter-width/3;
+				}
+				a {
+					position: relative;
+					color: $white;
+					font-size: .65em;
+					background: $grey;
+					display: inline-block;
+					margin: 0 $grid-gutter-width/3;
+					width: 29px;
+					height: 29px;
+					i {
+						position: absolute;
+						left: 50%;
+						top: 50%;
+						@include prefix( transform, translate(-50%,-50%), moz webkit o )
+					}
+					@include prefix( border-radius, 10000px, moz webkit o )
+					&:first-child {
+						margin-left: 0;
+					}
+					&:last-child {
+						margin-right: 0;
+					}
+				}
+			}
+		}
+		&:hover {
+			>.headline {
+				opacity: 0;
+			}
+			.overlay {
+				opacity: 1;
+			}
+		}
+	//	img:hover {
+	//		.headline {
+	//			opacity: 0;
+	//		}
+	//		.overlay {
+	//			opacity: 1;
+	//		}
+	//	}
+	}
+
+	.large {
+		.soma-wrapper {
+			float: left;
+			@media (min-width: $screen-md-min) {
+				float: right;
+			}
+		}
+	}
+
+	.expert-row {
+		.column {
+	//		margin-top: 0;
+			@media (min-width: $screen-sm-min) {
+	//			margin-top: auto !important;
+			}
+		}
+	}
+}
+
+.additional-people {
+	margin-top: $grid-gutter-width*6;
+	.row>.col-sm-12>.headline {
+		display: inline-block;
+		background: $black;
+		box-shadow: 8px 0 0 $black, -8px 0 0 $black;
+		box-decoration-break: clone;
+		color: $white;
+		margin-bottom: $grid-gutter-width*2;
+		font-weight: 400;
+	}
+	.teaser-whitebox-overlap {
+		margin-bottom: $grid-gutter-width/3;
+	}
+}
+
+.dark {
+	background: $black;
+	color: $white;
+	padding-top: $grid-gutter-width*6;
+	padding-bottom: $grid-gutter-width*8;
+	.experts-intro {
+		font-family: 'Zilla Slab', sans-serif;
+		font-size: 1.4em;
+		margin-bottom: $grid-gutter-width*2;
+		.headline {
+			font-size: 2.8em;
+			margin-bottom: .75em;
+		}
+		@media (min-width: $screen-md-min) {
+			margin-bottom: 0;
+		}
+	}
+	.expert-wrapper {
+		position: relative;
+		font-size: .8em;
+		line-height: 1.6em;
+		overflow: hidden;
+		.content {
+			padding: $grid-gutter-width 0;
+			@media (min-width: $screen-md-min) {
+				padding: $grid-gutter-width;
+			}
+		}
+		.overlay {
+			position: relative;
+			width: 100%;
+			height: auto;
+			opacity: 1;
+			@include prefix(transition, all ease .75s, moz webkit o);
+			.headline {
+				display: inline-block;
+				font-size: 2.6em;
+				margin-right: $grid-gutter-width/5;
+			}
+			.name-additional {
+				display: inline-block;
+				font-family: 'Zilla Slab', sans-serif;
+				font-weight: 700;
+				font-size: 1.2em;
+			}
+			@media (min-width: $screen-md-min) {
+				position: absolute;
+				opacity: 0;
+			}
+			.button {
+				display: inline-block;
+				font-weight: 700;
+				font-size: 1.2em;
+				margin-top: $grid-gutter-width/6;
+				font-family: 'Zilla Slab', sans-serif;
+				background: $white;
+				color: $black;
+			}
+		}
+		.img-wrapper {
+			img {
+				@include prefix(transition, all ease .75s, moz webkit o);
+			}
+		}
+		&:hover {
+			.overlay {
+				opacity: 1;
+			}
+		}
+		
+	}
+	.twoxone {
+		.expert-wrapper {
+			.overlay {
+				left: 0;
+				top: 0;
+				height: 100%;
+				@media (min-width: $screen-md-min) {
+					left: -10%;
+				}
+			}
+			.img-wrapper {
+				img {
+					width: 100%;
+					max-width: 100%;
+					margin-left: 0%;
+					@media (min-width: $screen-md-min) {
+						width: 110%;
+						max-width: 110%;
+						margin-left: -10%;
+					}
+				}
+			}
+			&:hover {
+				.overlay {
+					left: 0;
+					opacity: 1;
+				}
+				.img-wrapper {
+					img {
+						margin-left: 0;
+						@media (min-width: $screen-md-min) {
+							margin-left: 0%;
+						}
+					}
+				}
+			}
+		}
+	}
+	.onexone {
+		.expert-wrapper {
+			.overlay {
+				bottom: 0%;
+				@media (min-width: $screen-md-min) {
+					bottom: -10%;
+				}
+			}
+			&:hover {
+				.overlay {
+					bottom: 0;
+				}
+			}
+		}
+	}
+	.expert-row {
+		margin-bottom: $grid-gutter-width*2;
+		@media (min-width: $screen-md-min) {
+			margin-bottom: 0;
+		}
+	}
+}
+
+.page-template-experts-dark {
+	footer {
+		background: $white;
+		color: $black;
+		margin-top: 0;
+		a {
+			color: $black;
+		}
+	}
+}
