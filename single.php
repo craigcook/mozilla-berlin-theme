@@ -10,13 +10,13 @@ if ( have_posts() ) {
 		the_post();
 		?>
 		
-		<div class="post-intro" style="background-image: url('<?php echo get_field('intro_image')['sizes']['intro'] ?>')">
+		<div class="post-intro" style="background-image: url('<?php echo get_field('intro_image')['sizes']['intro'] ?>');<?php if(get_field('height')){echo "height:".get_field('height')."px;";}; if(get_field('proportional_scaling_height_padding_bottom')){echo "padding-bottom:".get_field('proportional_scaling_height_padding_bottom')."%;";}; ?>">
 			<div class="intro-text-wrapper">
 				<div class="container">
 					<div class="row">
 						<div class="col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
 							<h1><?php the_title(); ?></h1>
-							<?php the_field('subheadline'); ?>
+                            <p><?php the_field('subheadline'); ?></p>
 						</div>
 					</div>
 				</div>

@@ -114,7 +114,7 @@ get_header(); ?>
 		</div>
 	</div>
 	
-	<div class="row">
+	<div class="row" style="display:none;">
 		<div class="col-sm-12">
 			<ul class="filter">
 				<li class="active" data-filter="most-recent"><?php if ( get_field('button_product_news_most_recent') ) { echo get_field('button_product_news_most_recent'); } else { ?>Most Recent<?php } ?></li>
@@ -264,7 +264,7 @@ get_header(); ?>
 				<a class="no-style" href="<?php echo get_field('link_meet_the_experts',$id)['url']; ?>" target="<?php echo get_field('link_meet_the_experts',$id)['target']; ?>">
 				<div class="background" style="background-image:url('<?php if( get_field('image_meet_the_experts',$id) ){ echo get_field('image_meet_the_experts',$id); }?>')"></div>
 				<div class="white-box">
-					<h2 class="headline"><?php the_field('headline_meet_the_experts',$id); ?></h2>
+					<h2 class="headline" style="<?php if(get_field('link_meet_the_experts_color', $id)){echo 'background-color:'.get_field('link_meet_the_experts_color', $id).';box-shadow: 8px 0 0 '.get_field('link_meet_the_experts_color', $id).', -8px 0 0 '.get_field('link_meet_the_experts_color', $id).';';} ?>" ><?php the_field('headline_meet_the_experts',$id); ?></h2>
 					<p><?php the_field('text_meet_the_experts',$id); ?></p>
 				</div>
 				</a>
