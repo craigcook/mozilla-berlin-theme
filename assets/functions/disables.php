@@ -25,7 +25,7 @@ add_action('admin_head', 'hide_menu');
 
 function remove_editor() {
   remove_post_type_support('page', 'editor');
-  remove_post_type_support('post', 'editor');
+//  remove_post_type_support('post', 'editor');
 }
 add_action('admin_init', 'remove_editor');
 

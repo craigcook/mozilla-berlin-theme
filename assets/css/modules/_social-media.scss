@@ -48,3 +48,15 @@
 .social-box {
 	margin-bottom: $grid-gutter-width;
 }
+
+.social-row {
+	&:nth-child(3) {
+		display: none !important;
+		@media (min-width: $screen-md-min) {
+			display: -webkit-box !important;
+			display: -ms-flexbox !important;
+			display: -webkit-flex !important;
+			display: flex !important;
+		}
+	}
+}

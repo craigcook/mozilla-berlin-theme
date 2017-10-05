@@ -14,7 +14,7 @@ $settings = array(
 /** Perform a GET request and echo the response **/
 /** Note: Set the GET field BEFORE calling buildOauth(); **/
 $url = 'https://api.twitter.com/1.1/statuses/user_timeline.json';
-$getfield = '?screen_name=MozillaBerlin';
+$getfield = '?screen_name=MozillaBerlin&tweet_mode=extended';
 $requestMethod = 'GET';
 $twitter = new TwitterAPIExchange($settings);
 $twitter =  $twitter->setGetfield($getfield)
@@ -29,7 +29,7 @@ foreach($twitterStream as $twitter_item) {
 		$social_media_posts[] = array(
 			'type'    => 'twitter',
 			'created' => strtotime($twitter_item->created_at),
-			'text'    => $twitter_item->text,
+			'text'    => $twitter_item->full_text,
 			'user'    => $twitter_item->user->screen_name,
 			'id'      => $twitter_item->id,
 			
@@ -41,7 +41,7 @@ foreach($twitterStream as $twitter_item) {
 		$social_media_posts[] = array(
 			'type'    => 'twitter',
 			'created' => strtotime($twitter_item->created_at),
-			'text'    => $twitter_item->text,
+			'text'    => $twitter_item->full_text,
 			'user'    => $twitter_item->user->screen_name,
 			'id'      => $twitter_item->id,
 		);
@@ -52,7 +52,7 @@ foreach($twitterStream as $twitter_item) {
 /** Perform a GET request and echo the response **/
 /** Note: Set the GET field BEFORE calling buildOauth(); **/
 $url = 'https://api.twitter.com/1.1/statuses/user_timeline.json';
-$getfield = '?screen_name=MozillaPR_DE';
+$getfield = '?screen_name=MozillaPR_DE&tweet_mode=extended';
 $requestMethod = 'GET';
 $twitter = new TwitterAPIExchange($settings);
 $twitter =  $twitter->setGetfield($getfield)
@@ -68,7 +68,7 @@ foreach($twitterStream as $twitter_item) {
 		$social_media_posts[] = array(
 			'type'    => 'twitter',
 			'created' => strtotime($twitter_item->created_at),
-			'text'    => $twitter_item->text,
+			'text'    => $twitter_item->full_text,
 			'user'    => $twitter_item->user->screen_name,
 			'id'      => $twitter_item->id,
 			
@@ -80,7 +80,7 @@ foreach($twitterStream as $twitter_item) {
 		$social_media_posts[] = array(
 			'type'    => 'twitter',
 			'created' => strtotime($twitter_item->created_at),
-			'text'    => $twitter_item->text,
+			'text'    => $twitter_item->full_text,
 			'user'    => $twitter_item->user->screen_name,
 			'id'      => $twitter_item->id,
 		);
@@ -106,7 +106,7 @@ foreach($social_media_posts as $post) {
 		break;
 	}
 	
-	if ( $social_media_index % 4 == 1 ) {echo '<div class="row flex">';};
+	if ( $social_media_index % 4 == 1 ) {echo '<div class="row flex social-row">';};
 
 	if($post['type'] === 'twitter') {
 		if( isset($post['image_url']) ) {

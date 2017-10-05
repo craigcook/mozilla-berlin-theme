@@ -1,31 +1,47 @@
 
 .headline-divider {
 	position: relative;
-	margin-top: $grid-gutter-width*3;
-	margin-bottom: $grid-gutter-width;
+	margin-top: $grid-gutter-width;
+	margin-bottom: $grid-gutter-width/2;
+	left: -$grid-gutter-width/2;
+	@media (min-width: $screen-sm-min) {
+		left: 0;
+		margin-top: $grid-gutter-width*3;
+		margin-bottom: $grid-gutter-width;
+	}
 	.headline {
 		background: $black;
-		padding: 0px 10px 2px;
-		width: 100%;
+		padding: 8px 20px 10px 23px;
+		width: auto;
 		display: inline-block;
 		color: $white;
-		padding-left: $grid-gutter-width;
 		font-family: 'Zilla Slab', sans-serif;
-		font-size: 1.2em;
+		font-weight: 700;
+		font-size: 1.4em;
 		@media (min-width: $screen-sm-min) {
 			width: 50%;
+			padding: 0px 10px 2px $grid-gutter-width;
+			font-weight: 400;
+			font-size: 1.2em;
 		}
 	}
 	&.small {
 		.headline {
-			width: 25%;
+			width: auto;
+			@media (min-width: $screen-sm-min) {
+				width: 25%;
+			}
 		}
 	}
 	.pixel-bar {
+		display: none;
 		background: $black;
 		position: absolute;
 		width: 100%;
 		height: 1px;
+		@media (min-width: $screen-sm-min) {
+			display: block;
+		}
 	}
 //	&:before {
 //		content: '';
@@ -122,11 +138,17 @@
 		}
 	}
 	.white-box {
-		position: absolute;
-		bottom: -1px;
-		left: -1px;
-		width: 65%;
+		position: relative;
+		bottom: 0;
+		left: 0;
+		width: 100%;
 		padding: 20px;
+		@media (min-width: $screen-sm-min) {
+			position: absolute;
+			width: 65%;
+			bottom: -2px;
+			left: -2px;
+		}
 	}
 	a {
 		font-size: 0.900em;
@@ -170,19 +192,22 @@
 .teaser-colored {
 	margin-bottom: $grid-gutter-width;
 	.inner {
-		height: 175px;
-		padding: $grid-gutter-width/2 $grid-gutter-width/2+8;
+		position: relative;
+		padding: 8px;
+		height: auto;
 		a {
 			text-decoration: none;
 		}
 	}
 	.headline {
 		display: inline;
-		color: $black;
-		background-color: #aefb4a;
-		box-shadow: 8px 0 0 #aefb4a, -8px 0 0 #aefb4a;
+		position: relative;
+		z-index: 2;
+		color: $white;
+		background-color: $black;
+		box-shadow: 8px 0 0 $black, -8px 0 0 $black;
 		box-decoration-break: clone;
-		font-size: 1.556em;
+		font-size: .9em;
 		line-height: 1.35em;
 	}
 	> a.arrow {
@@ -192,34 +217,65 @@
 		width: 100%;
 		border-bottom: 1px $lightblue solid;
 	}
+	.bg-color {
+		display: none;
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		z-index: 1;
+	}
+	@media (min-width: $screen-xs-min) {
+		.inner {
+			padding: $grid-gutter-width/2 $grid-gutter-width/2+8;
+			height: 175px;
+		}
+		.headline {
+			font-size: 1.556em;
+			color: $black;
+			background-color: #aefb4a;
+			box-shadow: 8px 0 0 #aefb4a, -8px 0 0 #aefb4a;
+		}
+		.bg-color {
+			display: block;
+		}
+	}
 }
 
 .teaser-whitebox-large {
-	height: 400px;
+	height: auto;
 	position: relative;
 	background-size: cover;
 	margin: $grid-gutter-width*1.5 $grid-gutter-width $grid-gutter-width*1.5 0;
 	font-size: 1.55em;
 	width: 100%;
 	overflow: hidden;
+	@media (min-width: $screen-sm-min) {
+		height: 400px;
+	}
 	&:hover {
 		.background {
 			@include prefix ( transform, scale(1.1), moz webkit o )
 		}
 	}
 	.background {
-		height: 100%;
+		height: 300px;
 		width: 100%;
-		position: absolute;
+		position: relative;
 		left: 0;
 		top: 0;
 		background-size: cover;
 		background-position: center;
 		z-index: 1;
-		@include prefix ( transition, all .75s ease, moz webkit o )
+		@include prefix ( transition, all .75s ease, moz webkit o );
+		@media (min-width: $screen-sm-min) {
+			position: absolute;
+			height: 100%;
+		}
 	}
 	.white-box {
-		position: absolute;
+		position: relative;
 		bottom: 0;
 		left: 0;
 		padding: $grid-gutter-width;
@@ -227,6 +283,7 @@
 		z-index: 2;
 		@media (min-width: $screen-sm-min) {
 			width: 60%;
+			position: absolute;
 		}
 		@media (min-width: $screen-md-min) {
 			width: 44%;
@@ -236,8 +293,8 @@
 			font-size: 1.72em;
 			margin-left: 8px;
 			display: inline;
-			background-color: #6d7c23;
-			box-shadow: 8px 0 0 #6d7c23, -8px 0 0 #6d7c23;
+			background-color: #000000;
+			box-shadow: 8px 0 0 #000000, -8px 0 0 #000000;
 			box-decoration-break: clone;
 		}
 	}
@@ -251,11 +308,15 @@
 }
 
 .teaser-whitebox-background {
-	height: 254px;
+	height: auto;
 	position: relative;
 	// margin-bottom: $grid-gutter-width;
 	overflow: hidden;
-    margin-top: $grid-gutter-width;
+    margin-top: $grid-gutter-width/3;
+    @media (min-width: $screen-sm-min) {
+        height: 254px;
+		margin-top: $grid-gutter-width;
+    }
     @media (min-width: $screen-md-min) {
         height: 100%;
         margin-top: 0;
@@ -287,12 +348,19 @@
 		font-size: 0.900em;
 	}
 	.white-box {
-		position: absolute;
+		position: relative;
 		width: 85%;
 		left: 0;
 		bottom: 0;
 		z-index: 2;
 		padding: $grid-gutter-width/2;
+		background: none;
+		color: $white;
+		@media (min-width: $screen-sm-min) {
+			position: absolute;
+			background: $white;
+			color: $black;
+		}
 	}
 }
 

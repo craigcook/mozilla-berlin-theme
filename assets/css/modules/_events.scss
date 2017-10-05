@@ -1,5 +1,13 @@
 .meetup-logo-wrapper {
-	margin-bottom: $grid-gutter-width/2;
+	padding-top: $grid-gutter-width/1.5;
+	padding-bottom: $grid-gutter-width/2;
+	padding-left: $grid-gutter-width/2;
+	background: #eee;
+	@media (min-width: $screen-sm-min) {
+		padding-left: 0;
+        background: none;
+		padding-top: 0;
+    }
 	img {
 		display: inline-block;
 		margin-right: $grid-gutter-width/3;
@@ -11,15 +19,22 @@
 	}
 }
 .events-wrapper {
-	background: darken($lightblue, 10);
-	padding: $grid-gutter-width;
+//	background: darken($lightblue, 10);
+	background: #eee;
+	padding: $grid-gutter-width/2;
 	font-size: .8em;
 	// margin-bottom: $grid-gutter-width*2;
+	@media (min-width: $screen-sm-min) {
+        padding: $grid-gutter-width;
+    }
 	.left {
-		margin-bottom: $grid-gutter-width/2;
-        span {
-            display: block;
-            font-size: 1.4em;
+        span.date {
+            display: inline-block;
+            font-size: 1em;
+			@media (min-width: $screen-sm-min) {
+				font-size: 1.4em;
+				display: block;
+			}
         }
 	}
 	.right {
@@ -29,4 +44,18 @@
 		color: $black;
 		text-decoration: none;
 	}
+}
+
+.venue-name,
+.venue-adress {
+	display: none;
+	@media (min-width: $screen-sm-min) {
+        display: block;
+		margin: $grid-gutter-width/6 0;
+    }
+}
+.venue-adress {
+	@media (min-width: $screen-sm-min) {
+		margin-bottom: $grid-gutter-width/2;
+    }
 }

@@ -1,6 +1,6 @@
 <?php
 
-// 1. customize ACF path
+/*// 1. customize ACF path
 add_filter('acf/settings/path', 'my_acf_settings_path');
  
 function my_acf_settings_path( $path ) {
@@ -25,7 +25,7 @@ function my_acf_settings_dir( $dir ) {
     // return
     return $dir;
     
-}
+}*/
 
 
 // 3. Hide ACF field group menu item
@@ -33,7 +33,7 @@ function my_acf_settings_dir( $dir ) {
 
 
 // 4. Include ACF
-include_once( get_stylesheet_directory() . '/assets/plugins/acf/acf.php' );
+//include_once( get_stylesheet_directory() . '/assets/plugins/acf/acf.php' );
 
 // Hide ACF field group menu item
 function remove_acf_menu(){
@@ -51,4 +51,31 @@ if( function_exists('acf_add_options_page') ) {
 //	acf_add_options_sub_page('Header');
 	acf_add_options_sub_page('Footer');
 	
+}
+
+
+
+
+
+
+add_filter('json_api_encode', 'json_api_encode_acf');
+
+
+function json_api_encode_acf($response) 
+{
+    if (isset($response['posts'])) {
+        foreach ($response['posts'] as $post) {
+            json_api_add_acf($post); // Add specs to each post
+        }
+    } 
+    else if (isset($response['post'])) {
+        json_api_add_acf($response['post']); // Add a specs property
+    }
+
+    return $response;
+}
+
+function json_api_add_acf(&$post) 
+{
+    $post->acf = get_fields($post->id);
 }

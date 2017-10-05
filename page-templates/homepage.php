@@ -376,15 +376,15 @@ if( have_rows('additional_links_colored', $id) ):
 		echo '<div class="row">';
 			while ( have_rows('additional_links_colored', $id) ) : the_row();
 				?>
-				<div class="col-sm-3">
+				<div class="col-sm-3 col-xs-3">
 					<div class="teaser-colored">
 						<a href="<?php if( get_sub_field('url') ){ echo get_sub_field('url')['url']; }else{ echo "#"; }; ?>" class="no-style">
 							<?php if( get_sub_field('background_color') ){ $color = get_sub_field('background_color'); }else{ $color = "#9194b0"; }; ?>
-							<div class="inner" style="background-color: <?php echo $color; ?>">
+							<div class="inner">
 									<h2 class="headline"><?php the_sub_field('headline'); ?></h2>
+									<div class="bg-color" style="background-color: <?php echo $color; ?>"></div>
 							</div>
 						</a>
-						<a class="arrow" href="<?php if( get_sub_field('url') ){ echo get_sub_field('url')['url']; }else{ echo "#"; }; ?>"><?php if(get_sub_field('read_more_alternative')){echo get_sub_field('read_more_alternative'); }else{echo 'read more';} ?></a>
 					</div>
 				</div>
 				<?php

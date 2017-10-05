@@ -12,17 +12,17 @@ $meetupStream = json_decode($data);
                 $i=0;
                 foreach ($meetupStream->results as $meetupItem) if ($i < 1) {
                     echo '<div class="row">';
-                        echo '<div class="col-md-8">';
+                        echo '<div class="col-xs-6 col-md-8">';
                             echo '<a href="'.$meetupItem->event_url.'" target="_blank">';
                             echo $meetupItem->name;
-                            echo "<br/>";
+                            echo "<span class='venue-name'>";
                             echo $meetupItem->venue->name;
-                            echo "<br/>";
+                            echo "</span><span class='venue-adress'>";
                             echo $meetupItem->venue->address_1;
-                            echo '</a>';
+                            echo '</span></a>';
                         echo '</div>';
-                        echo '<div class="col-md-4">';
-                            echo "<span>". date("d.M.", $meetupItem->time / 1000) . "</span> ";
+                        echo '<div class="col-xs-6 col-md-4">';
+                            echo "<span class='date'>". date("M d;") . "</span> ";
                             echo date("H:i", $meetupItem->time / 1000);
                         echo '</div>';
                     echo '</div>';
@@ -39,9 +39,9 @@ $meetupStream = json_decode($data);
                         $i +=1;
                     } else {
                         echo '<div class="row">';
-                            echo '<div class="col-md-8"><a href="'.$meetupItem->event_url.'" target="_blank">' . $meetupItem->name . '</a></div>';
+                            echo '<div class="col-xs-6 col-md-8"><a href="'.$meetupItem->event_url.'" target="_blank">' . $meetupItem->name . '</a></div>';
                             // echo '<div class="col-md-4">' . date("Y-m-d H:i:s", $meetupItem->time / 1000) . '</div>';
-                            echo '<div class="col-md-4">' . date("M d; H:i", $meetupItem->time / 1000) . '</div>';
+                            echo '<div class="col-xs-6 col-md-4">' . date("M d; H:i", $meetupItem->time / 1000) . '</div>';
                         echo '</div>';
                         $i +=1;
                     }

@@ -19,7 +19,9 @@ function create_posttype_people() {
 			'has_archive' => true,
 			'rewrite' => array('slug' => 'people'),
             'menu_icon' => 'dashicons-nametag',
-            'supports' => array( 'title', 'thumbnail','excerpt')
+            'supports' => array( 'title', 'editor', 'thumbnail', 'excerpt' ),
+			'show_in_rest'       => true,
+			'rest_base'          => 'people-api',
 		)
 	);
 	
@@ -48,8 +50,10 @@ function create_posttype_stories() {
 			'has_archive' => true,
 			'rewrite' => array('slug' => 'stories'),
             'menu_icon' => 'dashicons-welcome-write-blog',
-            'supports' => array( 'title', 'thumbnail','excerpt'),
-			'taxonomies' => array( 'category' )
+            'supports' => array( 'title', 'editor', 'thumbnail', 'excerpt' ),
+			'taxonomies' => array( 'category' ),
+			'show_in_rest'       => true,
+			'rest_base'          => 'stories-api',
 		)
 	);
 	

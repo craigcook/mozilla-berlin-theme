@@ -6,7 +6,7 @@
  */
 
 //ini_set('display_errors', 1);
-include(dirname(__FILE__). '/../functions/socialmedia/TwitterAPIExchange.php');
+include(dirname(__FILE__). '/../assets/functions/socialmedia/TwitterAPIExchange.php');
 //include(dirname(__FILE__). '/../functions/socialmedia/addTweetEntityLinks.php');
 
 /** Set access tokens here - see: https://dev.twitter.com/apps/ **/
@@ -36,7 +36,7 @@ $settings = array(
 /** Perform a GET request and echo the response **/
 /** Note: Set the GET field BEFORE calling buildOauth(); **/
 $url = 'https://api.twitter.com/1.1/statuses/user_timeline.json';
-$getfield = '?screen_name=MozillaBerlin';
+$getfield = '?screen_name=MozillaBerlin&tweet_mode=extended';
 $requestMethod = 'GET';
 $twitter = new TwitterAPIExchange($settings);
 $twitter =  $twitter->setGetfield($getfield)
@@ -50,22 +50,13 @@ foreach($twitterStream as $twitter_item) {
 		'type'    => 'twitter',
 		'created' => strtotime($twitter_item->created_at),
 //		'text'    => addTweetEntityLinks($twitter_item),
-		'text'    => $twitter_item->text,
+//		'text'    => $twitter_item->text,
 		'user'    => $twitter_item->user->screen_name,
 		'id'      => $twitter_item->id,
 	);
 }
 
-/** Perform a GET request and echo the response **/
-/** Note: Set the GET field BEFORE calling buildOauth(); **/
-$url = 'https://api.twitter.com/1.1/statuses/user_timeline.json';
-$getfield = '?screen_name=MozillaPR_DE';
-$requestMethod = 'GET';
-$twitter = new TwitterAPIExchange($settings);
-$twitter =  $twitter->setGetfield($getfield)
-            		->buildOauth($url, $requestMethod)
-            		->performRequest();
 
 //print_r($twitter);
 $twitterStream = json_decode($twitter);
-print_r $twitterStream;
+print_r ($twitter);

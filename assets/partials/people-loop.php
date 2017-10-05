@@ -1,7 +1,7 @@
 <div class="container additional-people">
 	<div class="row">
 		<div class="col-sm-12 text-align-center">
-			<h2 class="headline">More people of Mozilla</h2>
+			<h2 class="headline"><?php the_field('headline_more_people_of_mozilla','options'); ?></h2>
 		</div>
 	</div>
 	<div class="row">
