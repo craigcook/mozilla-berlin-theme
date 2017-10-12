@@ -333,49 +333,51 @@ get_header(); ?>
 	</div>
 </div>
 
-<div class="container">
-	<div class="row">
-		<div class="col-sm-12">
-			<div class="newsletter-wrapper">
-				<div class="row">
-					<div class="col-sm-6 left">
-						<?php 
-						$image = get_field('image_newsletter', $id);
-						if( !empty($image) ): ?>
-							<img src="<?php echo $image['sizes']['newsletter']; ?>" alt="<?php echo $image['alt']; ?>" />
-						<?php endif; ?>
-						<h2 class="headline"><?php the_field('headline_newsletter', $id); ?></h2>
-						<p><?php the_field('text_newsletter', $id); ?></p>
-					</div>
-					<div class="col-sm-6">
-						<div class="newsletter-inner">
-							<div class="newsletter" id="newsletter_wrap">
-							<form id="newsletter_form" name="newsletter_form" action="https://www.mozilla.org/en-US/newsletter/" method="post">
-								<?php the_field('text_newsletter_form', $id); ?>
-								<input type="hidden" id="fmt" name="fmt" value="H">
-								<input type="hidden" id="newsletters" name="newsletters" value="mozilla-and-you">
+<div class="newsletter-outer-wrapper">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-12">
+				<div class="newsletter-wrapper">
+					<div class="row">
+						<div class="col-sm-6 left">
+							<?php 
+							$image = get_field('image_newsletter', $id);
+							if( !empty($image) ): ?>
+								<img src="<?php echo $image['sizes']['newsletter']; ?>" alt="<?php echo $image['alt']; ?>" />
+							<?php endif; ?>
+							<h2 class="headline"><?php the_field('headline_newsletter', $id); ?></h2>
+							<p><?php the_field('text_newsletter', $id); ?></p>
+						</div>
+						<div class="col-sm-6">
+							<div class="newsletter-inner">
+								<div class="newsletter" id="newsletter_wrap">
+								<form id="newsletter_form" name="newsletter_form" action="https://www.mozilla.org/en-US/newsletter/" method="post">
+									<?php // the_field('text_newsletter_form', $id); ?>
+									<input type="hidden" id="fmt" name="fmt" value="H">
+									<input type="hidden" id="newsletters" name="newsletters" value="mozilla-and-you">
 
-								<div id="newsletter_errors" class="newsletter_errors"></div>
+									<div id="newsletter_errors" class="newsletter_errors"></div>
 
-								<div id="newsletter_email" class="form_group">
-									<input type="email" id="email" name="email" class="form_input" required placeholder="<?php the_field('text_newsletter_placeholder', $id); ?>" size="30">
-								</div>
+									<div id="newsletter_email" class="form_group">
+										<input type="email" id="email" name="email" class="form_input" required placeholder="<?php the_field('text_newsletter_placeholder', $id); ?>" size="30">
+									</div>
 
-								<div id="newsletter_privacy" class="form_group form_group-agree">
-									<input type="checkbox" id="privacy" name="privacy" required>
-									<label for="privacy">
-										<?php the_field('text_newsletter_form_privacy', $id); ?>
-									</label>
+									<div id="newsletter_privacy" class="form_group form_group-agree">
+										<input type="checkbox" id="privacy" name="privacy" required>
+										<label for="privacy">
+											<?php the_field('text_newsletter_form_privacy', $id); ?>
+										</label>
+									</div>
+									<div id="newsletter_submit">
+										<button id="newsletter_submit" type="submit" class="btn btn-success"><?php the_field('button_newsletter', $id); ?></button>
+									</div>
+								</form>
+								<div id="newsletter_thanks" class="newsletter_thanks">
+									<?php the_field('text_newsletter_success', $id); ?>
 								</div>
-								<div id="newsletter_submit">
-									<button id="newsletter_submit" type="submit" class="btn btn-success"><?php the_field('button_newsletter', $id); ?></button>
-								</div>
-							</form>
-							<div id="newsletter_thanks" class="newsletter_thanks">
-								<?php the_field('text_newsletter_success', $id); ?>
 							</div>
 						</div>
-					</div>
+						</div>
 					</div>
 				</div>
 			</div>

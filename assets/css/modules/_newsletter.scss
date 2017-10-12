@@ -1,37 +1,36 @@
+.newsletter-outer-wrapper {
+	background-image: url(assets/img/nwslttr-bg.jpg);
+	background-size: cover;
+	width: 100%;
+	height: auto;
+	margin-top: $grid-gutter-width*2;
+	padding-top: $grid-gutter-width*1.5;
+	padding-bottom: $grid-gutter-width*1.5;
+}
+
 .newsletter-wrapper {
-//	background: darken($lightblue, 20);
-	background: #88d1f1;
 	padding: $grid-gutter-width*.8 $grid-gutter-width/2;
 	margin-bottom: 0;
-	margin-top: $grid-gutter-width/3;
 	font-size: 1.111em;
 	line-height: 1.4em;
+	color: $white;
 	img {
 		display: none;
 		@media (min-width: $screen-sm-min) {
 			display: block;
 		}
 	}
-	@media (min-width: $screen-sm-min) {
-		margin-bottom: $grid-gutter-width*2;
-		margin-top: $grid-gutter-width*1.5;
-	}
 	.left {
 		margin-top: 0;
-		margin-bottom: $grid-gutter-width;
 		@media (min-width: $screen-sm-min) {
-			margin-top: $grid-gutter-width;
-			margin-bottom: 0;
+			margin-top: $grid-gutter-width/2;
 		}
 	}
 	.headline {
 		font-size: 1.400em;
 	}
 	a {
-		color: $typography-primary;
-	}
-	label {
-//		display: none;
+		color: $white;
 	}
 	img {
 		float: left;
@@ -39,46 +38,47 @@
 	}
 	input[type="email"] {
 		margin-top: $grid-gutter-width/6;
-		background: $black;
+		background: $white;
 		width: 100%;
 		padding-left: 4%;
-		color: $white;
+		color: $typography-grey;
 		margin-bottom: $grid-gutter-width/4;
-		color: $white;
+//		color: $white;
 		border: 0px solid darken($lightblue, 70);
 	}
 	button,
 	input[type="submit"] {
 		background: none;
-		border: 2px solid darken($lightblue, 70);
+		border: 2px solid $white;
 		width: 100%;
 		line-height: 2em;
+		color: $white;
 		margin-top: $grid-gutter-width/6;
 		@include prefix(border-radius, 5px, moz webkit o);
 	}
 	::-webkit-input-placeholder {
 		/* WebKit, Blink, Edge */
-		color: $lightblue;
+		color: $grey;
 		opacity: 1;
 	}
 	:-moz-placeholder {
 		/* Mozilla Firefox 4 to 18 */
-		color: $lightblue;
+		color: $grey;
 		opacity: 1;
 	}
 	::-moz-placeholder {
 		/* Mozilla Firefox 19+ */
-		color: $lightblue;
+		color: $grey;
 		opacity: 1;
 	}
 	:-ms-input-placeholder {
 		/* Internet Explorer 10-11 */
-		color: $lightblue;
+		color: $grey;
 		opacity: 1;
 	}
 	::-ms-input-placeholder {
 		/* Microsoft Edge */
-		color: $lightblue;
+		color: $grey;
 		opacity: 1;
 	}
 	.newsletter-inner {

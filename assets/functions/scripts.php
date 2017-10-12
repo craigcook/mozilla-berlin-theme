@@ -12,7 +12,7 @@ function mozilla_berlin_scripts() {
 	
 	wp_enqueue_style( 'mozilla_berlin-font_awesome', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' );
 	
-	wp_enqueue_style( 'mozilla_berlin-style', get_stylesheet_uri(), '', '20141020' );
+	wp_enqueue_style( 'mozilla_berlin-style', get_stylesheet_uri(), '', '20141022' );
 	
 	wp_enqueue_script( 'mozilla_berlin-main-script', get_template_directory_uri() . '/assets/js/main.js', array( 'jquery' ), '2014100', true );
 	

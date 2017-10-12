@@ -4,7 +4,7 @@
  * 
  */
 
- require_once( __DIR__ . '/assets/functions/error_report.php');
+ // require_once( __DIR__ . '/assets/functions/error_report.php');
  require_once( __DIR__ . '/assets/functions/setup.php');
  require_once( __DIR__ . '/assets/functions/disables.php');
  require_once( __DIR__ . '/assets/functions/scripts.php');

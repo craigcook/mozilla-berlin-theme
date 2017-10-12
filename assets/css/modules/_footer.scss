@@ -83,3 +83,9 @@ footer {
 		margin-right: $grid-gutter-width/3;
 	}
 }
+
+.page-template-homepage {
+	footer {
+		margin-top: 0;
+	}
+}

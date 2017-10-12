@@ -275,25 +275,33 @@
 	.background {
 		width: 100%;
 		height: 100%;
-		position: absolute;
+		padding-bottom: 60%;
+		position: relative;
 		left: 0;
 		top: 0;
 		background-size: cover;
 		background-position: center;
 		z-index: 1;
 		@include prefix ( transition, all .75s ease, moz webkit o );
+		@media (min-width: $screen-sm-min) {
+			position: absolute;
+			height: 100%;
+			padding-bottom: 0;
+		}
 	}
 	.white-box {
 //		position: absolute;
 		position: relative;
 		bottom: 0;
 		left: 0;
-		padding: $grid-gutter-width;
-		margin-top: $grid-gutter-width*3;
-		width: 65%;
+		padding: $grid-gutter-width/ 2;
+		margin-top: 0;
+		width: 100%;
 		z-index: 2;
 		@media (min-width: $screen-sm-min) {
 			width: 60%;
+			margin-top: $grid-gutter-width*3;
+			padding: $grid-gutter-width;
 		}
 		@media (min-width: $screen-md-min) {
 			width: 44%;

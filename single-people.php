@@ -23,6 +23,15 @@ if ( have_posts() ) {
 			</div>
 		</div>
 		
+		<div class="container responsive-headline">
+			<div class="row">
+				<div class="col-sm-12">
+					<h1><?php the_title(); ?></h1>
+					<p><?php the_field('subheadline'); ?></p>
+				</div>
+			</div>
+		</div>
+		
 		<div class="container page-content">
 			<div class="row">
 				<div class="col-sm-1 col-md-2">
