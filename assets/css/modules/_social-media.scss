@@ -11,11 +11,16 @@
 }
 
 .social-media-twitter {
-	padding: $grid-gutter-width/2;
-	background: #f8f8f8;
-	border: 1px solid #dfdfdf;
+	padding: 0;
+	background: none;
+	border: 0 solid #dfdfdf;
 	font-size: .9em;
 	height: 100%;
+	@media (min-width: $screen-sm-min) {
+		background: #f8f8f8;
+		border: 1px solid #dfdfdf;
+		padding: $grid-gutter-width/2;
+	}
 	a {
 		color: $typography-primary;
 		text-decoration: none;

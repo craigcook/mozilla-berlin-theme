@@ -224,6 +224,15 @@
 	.teaser-whitebox-overlap {
 		margin-bottom: $grid-gutter-width/3;
 	}
+	.no-style {
+		color: $black;
+	}
+	.white-box {
+		margin-bottom: $grid-gutter-width;
+		@media (min-width: $screen-sm-min) {
+			margin-bottom: 0;
+		}
+	}
 }
 
 .dark {
@@ -260,6 +269,22 @@
 			height: auto;
 			opacity: 1;
 			@include prefix(transition, all ease .75s, moz webkit o);
+			&:after {
+				content: '';
+				position: absolute;
+				left: 0;
+				top: 0;
+				width: 100%;
+				height: 100%;
+				background: -moz-linear-gradient(left, rgba(0,0,0,.6) 0%, rgba(0,0,0,0) 100%); /* FF3.6-15 */
+				background: -webkit-linear-gradient(left, rgba(0,0,0,.6) 0%,rgba(0,0,0,0) 100%); /* Chrome10-25,Safari5.1-6 */
+				background: linear-gradient(to right, rgba(0,0,0,.6) 0%,rgba(0,0,0,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+				z-index: 1;
+			}
+			.content {
+				position: relative;
+				z-index: 2;
+			}
 			.headline {
 				display: inline-block;
 				font-size: 2.6em;
@@ -342,10 +367,35 @@
 				@media (min-width: $screen-md-min) {
 					bottom: -10%;
 				}
+				&:after {
+					background: -moz-linear-gradient(bottom, rgba(0,0,0,.6) 0%, rgba(0,0,0,0) 100%); /* FF3.6-15 */
+					background: -webkit-linear-gradient(bottom, rgba(0,0,0,.6) 0%,rgba(0,0,0,0) 100%); /* Chrome10-25,Safari5.1-6 */
+					background: linear-gradient(to top, rgba(0,0,0,.6) 0%,rgba(0,0,0,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+				}
+			}
+			.img-wrapper {
+				img {
+					width: 100%;
+					max-width: 100%;
+					margin-left: 0%;
+					@media (min-width: $screen-md-min) {
+						width: 105%;
+						max-width: 105%;
+						margin-left: -5%;
+					}
+				}
 			}
 			&:hover {
 				.overlay {
 					bottom: 0;
+				}
+				.img-wrapper {
+					img {
+						margin-left: 0;
+						@media (min-width: $screen-md-min) {
+							margin-left: 0%;
+						}
+					}
 				}
 			}
 		}
@@ -356,6 +406,9 @@
 			margin-bottom: 0;
 		}
 	}
+	.email {
+		color: $white;
+	}
 }
 
 .page-template-experts-dark {
@@ -365,6 +418,13 @@
 		margin-top: 0;
 		a {
 			color: $black;
+		}
+		.additional-links {
+			a {
+				color: $white;
+				background-color: $black;
+				box-shadow: 15px 0 0 $black,-15px 0 0 $black;
+			}
 		}
 	}
 }

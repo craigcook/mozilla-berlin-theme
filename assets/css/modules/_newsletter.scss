@@ -1,12 +1,28 @@
 .newsletter-wrapper {
-	background: darken($lightblue, 20);
-	padding: $grid-gutter-width*.8 $grid-gutter-width*1.5;
-	margin-bottom: $grid-gutter-width*2;
-	margin-top: $grid-gutter-width*1.5;
+//	background: darken($lightblue, 20);
+	background: #88d1f1;
+	padding: $grid-gutter-width*.8 $grid-gutter-width/2;
+	margin-bottom: 0;
+	margin-top: $grid-gutter-width/3;
 	font-size: 1.111em;
 	line-height: 1.4em;
+	img {
+		display: none;
+		@media (min-width: $screen-sm-min) {
+			display: block;
+		}
+	}
+	@media (min-width: $screen-sm-min) {
+		margin-bottom: $grid-gutter-width*2;
+		margin-top: $grid-gutter-width*1.5;
+	}
 	.left {
-		margin-top: $grid-gutter-width;
+		margin-top: 0;
+		margin-bottom: $grid-gutter-width;
+		@media (min-width: $screen-sm-min) {
+			margin-top: $grid-gutter-width;
+			margin-bottom: 0;
+		}
 	}
 	.headline {
 		font-size: 1.400em;
@@ -71,10 +87,18 @@
 			margin: 0;
 		}
 	}
+	#newsletter_privacy {
+		position: relative;
+	}
 	label {
 		font-size: .7em;
 		line-height: 1em;
 		display: inline-block;
+		padding: $grid-gutter-width/3 0 $grid-gutter-width/3 $grid-gutter-width/1.5;
+	}
+	[type="checkbox"] {
+		position: absolute;
+		top: 10px;
 	}
 }
 

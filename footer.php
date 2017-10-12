@@ -4,6 +4,26 @@
  */
 ?>
 		<footer>
+		<?php
+			if( have_rows('additional_linkss', 'options') ):
+				echo '<div class="container additional-links">';
+					echo '<div class="row">';
+						while ( have_rows('additional_links', 'options') ) : the_row();
+							?>
+							<div class="col-md-3 col-sm-6 col-xs-6">
+								<?php 
+								$link = get_sub_field('link', $id);
+								if( $link ): ?>
+									<a class="link" href="<?php echo $link['url']; ?>" target="<?php echo $link['target']; ?>"><?php echo $link['title']; ?></a>
+								<?php endif; ?>
+							</div>
+							<?php
+						endwhile;
+					echo '</div>';
+				echo '</div>';
+			else :
+			endif;
+			?>
 			<div class="container">
 				<div class="row">
 					<div class="col-sm-4">
@@ -45,7 +65,7 @@
 						<?php
 						if( have_rows('social_media_right','options') ): ?>
 							<div class="soma-wrapper">
-							<?php while ( have_rows('social_media_left','options') ) : the_row();
+							<?php while ( have_rows('social_media_right','options') ) : the_row();
 								if( get_row_layout() == 'youtube' ):
 									echo '<a target="_blank" href="'.get_sub_field('url').'"><i class="fa fa-youtube-play fa-lg"></i></a>';
 								elseif( get_row_layout() == 'facebook' ): 

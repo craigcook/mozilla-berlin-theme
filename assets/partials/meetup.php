@@ -7,6 +7,7 @@ $meetupStream = json_decode($data);
 <div class="events-wrapper">
     <div class="row">
         <div class="col-md-12">
+           <h3 class="headline meetup-logo-wrapper"><img class="meetup-logo" width="110" height="31" src="<?php echo get_template_directory_uri() ?>/assets/img/meetup-logo-script.svg" /> <span>Events</span></h3>
             <div class="left">
                 <?php
                 $i=0;

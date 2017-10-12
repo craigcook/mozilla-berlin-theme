@@ -2,14 +2,15 @@
 	position: absolute;
 	z-index: 5;
 	top: 50%;
-	width: 82px;
-	height: 82px;
+	width: 60px;
+	height: 60px;
 	border: 0;
 	background: none;
 	font-size: 0;
 	@include prefix ( border-radius, 1000px, moz webkit o);
 	@include prefix ( transform, translate(0, -50%), moz webkit o);
 	background-image: url(assets/img/chevron.svg);
+	background-size: 20%;
 	background-repeat: no-repeat;
 	background-position: 46% 50%;
 	&.slick-prev {
@@ -56,20 +57,40 @@
 		height: 100%;
 		z-index: 1;
 	}
+	.content-wrapper {
+		position: absolute;
+		left: 0;
+		top: auto;
+		bottom: $grid-gutter-width/2;
+		width: 100%;
+		height: auto;
+		@media (min-width: $screen-sm-min) {
+			height: 100%;
+			top: 0;
+			bottom: auto;
+		}
+	}
 	.white-box {
 		// max-width: 45%;
 		width: 85%;
-		position: absolute;
-		bottom: 140px;
-		padding: $grid-gutter-width/1.5 $grid-gutter-width $grid-gutter-width/2;
+		position: relative;
+
+		padding: 20px 30px 20px 25px;
 		font-size: 1.111em;
-		z-index: 2;
+		z-index: 3;
+		@media (min-width: $screen-sm-min) {
+			position: absolute;
+			bottom: 140px;
+		}
 		@media (min-width: $screen-md-min) {
 			width: 45%;
 			bottom: 0;
 		}
 		.headline {
-			font-size: 2.300em;
+			font-size: 1.8em;
+			@media (min-width: $screen-sm-min) {
+				font-size: 2.300em;
+			}
 		}
 		a {
 //			font-size: 0.800em;
@@ -77,15 +98,20 @@
 		}
 	}
 	.additional-teaser-wrapper {
-		position: absolute;
+		position: relative;
 		bottom: 0;
 		left: 0;
 		width: 100%;
 		padding-left: 0;
 		font-size: 0.778em;
 		color: $white;
+		margin-top: $grid-gutter-width/2;
 		padding-bottom: $grid-gutter-width/2;
 		z-index: 2;
+		@media (min-width: $screen-sm-min) {
+			position: absolute;
+			margin-top: 0;
+		}
 		@media (min-width: $screen-md-min) {
 			padding-left: 45%;
 		}
@@ -95,7 +121,8 @@
 		width: 40%;
 		margin: 0 5%;
 		.headline {
-			font-size: 1.429em;
+			font-size: 1.3em;
+			line-height: 1.1em;
 		}
 		a {
 //			font-size: 1.143em;
@@ -134,7 +161,7 @@
 		}
 //	}
 	.video-wrapper {
-		padding-bottom: 5.25%;
+//		padding-bottom: 5.25%;
 		background: $black;
 		.embed-container {
 			position: absolute;
@@ -151,11 +178,36 @@
 	.embed-container {
 		
 	}
+	/* NEW Video-Title #17355 */
+	.video-description {
+		// max-width: 45%;
+		width: 85%;
+		position: absolute;
+		background: $white;
+		padding: 20px 30px 20px 25px;
+		font-size: 1.111em;
+		z-index: 3;
+		bottom: 0;
+		@media (min-width: $screen-sm-min) {
+			position: absolute;
+//			bottom: 140px;
+		}
+		@media (min-width: $screen-md-min) {
+			width: 45%;
+			
+		}
+		.headline {
+			font-size: 1.8em;
+			@media (min-width: $screen-sm-min) {
+				font-size: 2.300em;
+			}
+		}
+	}
+	/* OLD Video-Title #17355
 	.video-description {
 		position: absolute;
 		bottom: 0;
 		width: 100%;
-//		background: $black;
 		color: $white;
 		padding: 13px 20px;
 		font-size: 0.889em;
@@ -165,12 +217,11 @@
 			float: left;
 		}
 		a {
-			//			color: $lightblue;
 			text-decoration: underline;
 			float: right;
 		}
 		@include clearfix;
-	}
+	}*/
 	.slick-arrow {
 		background-color: rgba(#fff, .45);
 		&.slick-prev {
@@ -210,10 +261,20 @@
 			@include prefix( transition, all .5s ease, moz webkit o );
 		}
 	}
+	p {
+		display: none;
+		@media (min-width: $screen-md-min) {
+			display: block;
+		}
+	}
 }
 
 .slider-products-wrapper {
+	overflow: hidden;
 	display: none;
+	@media (min-width: $screen-sm-min) {
+		overflow: visible;
+	}
 	&.active {
 		display: block;
 	}
@@ -222,6 +283,10 @@
 		@media (min-width: $screen-sm-min) {
 			padding-right: 0;
 		}
+	}
+	img {
+		max-width: none;
+		width: 100%;
 	}
 }
 

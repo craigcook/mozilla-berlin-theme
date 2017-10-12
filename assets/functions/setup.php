@@ -53,7 +53,8 @@ function mozilla_berlin_setup() {
 	add_image_size('contentcol', 803, 9999, false);
 	add_image_size('3col-thumbnail', 387, 235, true);
 	//add_image_size('3col-thumbnail-2x', 774, 470, true);
-	add_image_size('featured-slider', 940, 578, true);
+	add_image_size('featured-slider', 940, 529, true);
+//	add_image_size('featured-slider', 940, 578, true);
 	add_image_size('newsletter', 100, 100, true);
 	add_image_size('gallery-large', 1190, 9999, false);
 	add_image_size('gallery', 377, 9999, false);

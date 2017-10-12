@@ -3,7 +3,7 @@
 function convertYoutube( $string ) {
 	return preg_replace(
 		"/\s*[a-zA-Z\/\/:\.]*youtu(be.com\/watch\?v=|.be\/)([a-zA-Z0-9\-_]+)([a-zA-Z0-9\/\*\-\_\?\&\;\%\=\.]*)/i",
-		"<div class='embed-container youtube'><iframe src=\"//www.youtube.com/embed/$2?&enablejsapi=1&showinfo=0\" allowfullscreen></iframe></div>",
+		"<div class='embed-container youtube'><iframe class='youtube-iframe' src=\"//www.youtube.com/embed/$2?&enablejsapi=1&showinfo=0\" allowfullscreen></iframe></div>",
 		$string
 	);
 }

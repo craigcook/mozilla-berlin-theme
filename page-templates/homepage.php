@@ -13,6 +13,9 @@ get_header(); ?>
 	?>
 	<div class="row">
 		<div class="col-sm-12">
+			<script>
+				var playerid = [];
+			</script>
 			<div class="slider-featured">
 				<?php
 				$i = 0;
@@ -31,25 +34,26 @@ get_header(); ?>
 									<img src="<?php echo $image['sizes']['featured-slider']; ?>" alt="<?php echo $image['alt']; ?>" />
 								<?php endif; ?>
 								<a class="full" href="<?php echo get_sub_field('url_1')['url']; ?>" target="<?php echo get_sub_field('url_1')['target']; ?>" title="<?php echo get_sub_field('url_1')['title']; ?>"></a>
-								<div class="white-box">
-									<a class="no-style" href="<?php echo get_sub_field('url_1')['url']; ?>" target="<?php echo get_sub_field('url_1')['target']; ?>" title="<?php echo get_sub_field('url_1')['title']; ?>">
-										<h2 class="headline"><?php the_sub_field('title_1') ?></h2>
-										<p><?php the_sub_field('teaser_text_1') ?></p>
-									</a>
-									
-								</div>
-								<div class="additional-teaser-wrapper">
-									<div class="additional-teaser">
-										<a class="no-style" href="<?php echo get_sub_field('url_2')['url']; ?>" target="<?php echo get_sub_field('url_2')['target']; ?>" title="<?php echo get_sub_field('url_3')['title']; ?>">
-											<h2 class="headline"><?php the_sub_field('title_2') ?></h2>
-											<p><?php the_sub_field('teaser_text_2') ?></p>
+								<div class="content-wrapper">
+									<div class="white-box">
+										<a class="no-style" href="<?php echo get_sub_field('url_1')['url']; ?>" target="<?php echo get_sub_field('url_1')['target']; ?>" title="<?php echo get_sub_field('url_1')['title']; ?>">
+											<h2 class="headline"><?php the_sub_field('title_1') ?></h2>
+											<p><?php the_sub_field('teaser_text_1') ?></p>
 										</a>
 									</div>
-									<div class="additional-teaser">
-										<a class="no-style" href="<?php echo get_sub_field('url_3')['url']; ?>" target="<?php echo get_sub_field('url_3')['target']; ?>" title="<?php echo get_sub_field('url_3')['title']; ?>">
-											<h2 class="headline"><?php the_sub_field('title_3') ?></h2>
-											<p><?php the_sub_field('teaser_text_3') ?></p>
-										</a>
+									<div class="additional-teaser-wrapper">
+										<div class="additional-teaser">
+											<a class="no-style" href="<?php echo get_sub_field('url_2')['url']; ?>" target="<?php echo get_sub_field('url_2')['target']; ?>" title="<?php echo get_sub_field('url_3')['title']; ?>">
+												<h2 class="headline"><?php the_sub_field('title_2') ?></h2>
+												<p><?php the_sub_field('teaser_text_2') ?></p>
+											</a>
+										</div>
+										<div class="additional-teaser">
+											<a class="no-style" href="<?php echo get_sub_field('url_3')['url']; ?>" target="<?php echo get_sub_field('url_3')['target']; ?>" title="<?php echo get_sub_field('url_3')['title']; ?>">
+												<h2 class="headline"><?php the_sub_field('title_3') ?></h2>
+												<p><?php the_sub_field('teaser_text_3') ?></p>
+											</a>
+										</div>
 									</div>
 								</div>
 							</div>
@@ -63,25 +67,44 @@ get_header(); ?>
 						?>
 
 						<div class="slide <?php if( $i == 0 ) { echo 'ani'; } ?> slide-video">
-						
-							<div class="video-wrapper">
-								<?php
-									if( get_sub_field('video_host') == "YouTube" ){
-										echo convertYoutube( get_sub_field('video_url') );
-									}elseif(get_sub_field('video_host') == "Vimeo"){
-										echo convertVimeo( get_sub_field('video_url') );
-									}
-								?>
-								
-								<div class="video-description">
-									<h2 class="headline"><?php the_sub_field('title') ?></h2>
+							
+							
+								<div class="video-wrapper">
 									<?php
-										if ( get_sub_field('url') ) {
-											echo '<a href="'.get_sub_field('url')['url'].'" target="'.get_sub_field('url')['target'].'" >'.get_sub_field('url')['title'].'</a>';
+										if( get_sub_field('video_host') == "YouTube" ){
+											// echo convertYoutube( get_sub_field('video_url') );
+											$output = $i - 1;
+											echo '<div class="embed-container youtube"><div id="player'. $output .'"></div></div>';
+											?>
+											<?php
+											if (preg_match('%(?:youtube(?:-nocookie)?\.com/(?:[^/]+/.+/|(?:v|e(?:mbed)?)/|.*[?&]v=)|youtu\.be/)([^"&?/ ]{11})%i', get_sub_field('video_url'), $match)) {
+												$video_id = $match[1];
+											}
+											?>
+											<script>
+												playerid.push('<?php echo $video_id; ?>');
+											</script>
+											<?php
+										}elseif(get_sub_field('video_host') == "Vimeo"){
+											echo convertVimeo( get_sub_field('video_url') );
 										}
+
+									if ( get_sub_field('url') ) {
+										echo '<a class="no-style" href="'.get_sub_field('url')['url'].'" target="'.get_sub_field('url')['target'].'" >';
+									}
 									?>
+									<div class="video-description">
+										<h2 class="headline"><?php the_sub_field('title') ?></h2>
+										<p><?php the_sub_field('teaser_text') ?></p>
+									</div>
+									<?php
+									if ( get_sub_field('url') ) {
+										echo '</a>';
+									}
+									?>
+
 								</div>
-							</div>
+							
 							
 							<div class="overlay"></div>
 							
@@ -182,7 +205,7 @@ get_header(); ?>
 	</div>
 </div>
 
-<div class="container">
+<div class="container" id="people-of-mozilla">
 	<div class="row">
 		<div class="col-sm-12">
 			<div class="headline-divider">
@@ -257,9 +280,10 @@ get_header(); ?>
 
 </div>
 
-<div class="container">
+<div class="container teaser-whitebox-large-wrapper">
 	<div class="row">
 		<div class="col-sm-12">
+			<h2 class="headline-responsive" style="<?php if(get_field('link_meet_the_experts_color', $id)){echo 'background-color:'.get_field('link_meet_the_experts_color', $id).';box-shadow: 8px 0 0 '.get_field('link_meet_the_experts_color', $id).', -8px 0 0 '.get_field('link_meet_the_experts_color', $id).';';} ?>" ><?php the_field('headline_meet_the_experts',$id); ?></h2>
 			<div class="teaser-whitebox-large">
 				<a class="no-style" href="<?php echo get_field('link_meet_the_experts',$id)['url']; ?>" target="<?php echo get_field('link_meet_the_experts',$id)['target']; ?>">
 				<div class="background" style="background-image:url('<?php if( get_field('image_meet_the_experts',$id) ){ echo get_field('image_meet_the_experts',$id); }?>')"></div>
@@ -276,7 +300,7 @@ get_header(); ?>
 <div class="container">
 	<div class="row">
 		<div class="col-sm-12">
-			<h3 class="headline meetup-logo-wrapper"><img class="meetup-logo" width="110" height="31" src="<?php echo get_template_directory_uri() ?>/assets/img/meetup-logo-script.svg" /> <span>Events</span></h3>
+			
 		</div>
 	</div>
 	<div class="row flex">
@@ -359,6 +383,9 @@ get_header(); ?>
 	</div>
 </div>
 
+<?php
+if( have_rows('additional_links_colored_DEL', $id) ):
+?>
 <div class="container">
 	<div class="row">
 		<div class="col-sm-12">
@@ -369,14 +396,14 @@ get_header(); ?>
 		</div>
 	</div>
 </div>
-
 <?php
-if( have_rows('additional_links_colored', $id) ):
+
+
 	echo '<div class="container">';
 		echo '<div class="row">';
 			while ( have_rows('additional_links_colored', $id) ) : the_row();
 				?>
-				<div class="col-sm-3 col-xs-3">
+				<div class="col-md-3 col-sm-6 col-xs-6">
 					<div class="teaser-colored">
 						<a href="<?php if( get_sub_field('url') ){ echo get_sub_field('url')['url']; }else{ echo "#"; }; ?>" class="no-style">
 							<?php if( get_sub_field('background_color') ){ $color = get_sub_field('background_color'); }else{ $color = "#9194b0"; }; ?>

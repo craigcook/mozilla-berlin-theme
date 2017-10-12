@@ -1,13 +1,5 @@
 .meetup-logo-wrapper {
-	padding-top: $grid-gutter-width/1.5;
-	padding-bottom: $grid-gutter-width/2;
-	padding-left: $grid-gutter-width/2;
-	background: #eee;
-	@media (min-width: $screen-sm-min) {
-		padding-left: 0;
-        background: none;
-		padding-top: 0;
-    }
+	margin-bottom: $grid-gutter-width/1.5;
 	img {
 		display: inline-block;
 		margin-right: $grid-gutter-width/3;
@@ -25,7 +17,7 @@
 	font-size: .8em;
 	// margin-bottom: $grid-gutter-width*2;
 	@media (min-width: $screen-sm-min) {
-        padding: $grid-gutter-width;
+        padding: $grid-gutter-width/1.5 $grid-gutter-width;
     }
 	.left {
         span.date {

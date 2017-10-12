@@ -16,7 +16,7 @@ if ( have_posts() ) {
 			<div class="intro-text-wrapper">
 				<div class="container">
 					<div class="row">
-						<div class="col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
+						<div class="col-sm-8">
 							<h1><?php the_title(); ?></h1>
 							<?php the_field('subheadline'); ?>
 						</div>

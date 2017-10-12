@@ -59,16 +59,16 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', e
 	}
 	a {
 		text-align: center;
+		display: block;
 		text-decoration: none;
 		color: $typography-primary;
 		opacity: .5;
 		margin-bottom: $grid-gutter-width/1.2;
-		display: block;
 		line-height: 1em;
 		display: inline-block;
 		margin-right: $grid-gutter-width;
 		@media (min-width: $screen-md-min) {
-			display: block;
+			display: table;
 		}
 		i {
 			font-size: 1.6em;
@@ -79,10 +79,12 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', e
 }
 
 .label {
-    font-weight: 700;
+    font-weight: 400;
     font-size: 2em;
-	line-height: 1.2em;
+	line-height: 1.34em;
     font-family: 'Zilla Slab', serif;
+	font-style: italic;
+	margin: 50px auto;
 }
 
 .element-margin {
@@ -123,14 +125,13 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', e
 }
 
 .infobox {
-    color: $white;
-    font-weight: 700;
     font-size: 1.15em;
     line-height: 1.5em;
     div {
-        margin-left: 8px;
+        
     }
     .headline {
+		color: $white;
         font-family: 'Zilla Slab', sans-serif;
         font-size: 1.8em;
         line-height: 1.6em;
@@ -138,17 +139,26 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', e
         background-color: $black;
         box-shadow: 8px 0 0 $black, -8px 0 0 $black;
 		box-decoration-break: clone;
+		font-weight: 700;
+		margin-left: 8px;
     }
     p {
-        display: inline;
-		background-color: rgba($black,.6);
-        box-shadow: 8px 0 0 rgba($black,.6), -8px 0 0 rgba($black,.6);
-		box-decoration-break: clone;
+//      display: inline;
+//		background-color: rgba($black,.6);
+//      box-shadow: 8px 0 0 rgba($black,.6), -8px 0 0 rgba($black,.6);
+//		box-decoration-break: clone;
     }
     a {
+		color: $white;
         font-size: .8em;
         line-height: 2em;
-    }
+		background-color: $black;
+        box-shadow: 8px 0 0 $black, -8px 0 0 $black;
+		box-decoration-break: clone;
+		font-weight: 700;
+		margin-left: 8px;
+		text-decoration: none;
+	}
 }
 
 .background-image {

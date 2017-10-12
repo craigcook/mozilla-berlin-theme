@@ -7,7 +7,7 @@
 $id = get_the_ID();
 get_header(); ?>
 
-<div class="dark">
+<div class="dark" style="<?php if( get_field('background_color') ) { echo 'background:'.get_field('background_color').';'; } ?>">
 	<div class="container experts-intro">
 		<div class="row">
 			<div class="col-sm-7">
@@ -49,7 +49,7 @@ get_header(); ?>
 											<p class="name-additional"><?php the_sub_field('name_additional'); ?></p>
 											<?php the_sub_field('text'); ?>
 											<?php if ( get_sub_field('contact_cta') ) {
-												echo '<a class="button" href="'.get_sub_field('contact_cta')['url'].'" traget="'.get_sub_field('contact_cta')['target'].'" title="'.get_sub_field('contact_cta')['title'].'">'.get_sub_field('contact_cta')['title'].'</a>';
+												echo '<a class="email" href="'.get_sub_field('contact_cta')['url'].'" traget="'.get_sub_field('contact_cta')['target'].'" title="'.get_sub_field('contact_cta')['title'].'"><i class="fa fa-envelope fa-lg"></i></a>';
 											} ?>
 										</div>
 									</div>
