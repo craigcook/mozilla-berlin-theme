@@ -428,5 +428,4 @@ else :
 endif;
 ?>
 
-
 <?php get_footer(); ?>
