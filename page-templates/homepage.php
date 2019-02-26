@@ -7,7 +7,7 @@
 $id = get_the_ID();
 get_header(); ?>
 
-<div class="container">	
+<div class="container">
 	<?php
 	if( have_rows('featured_slider') ):
 	?>
@@ -20,16 +20,16 @@ get_header(); ?>
 				<?php
 				$i = 0;
 				while ( have_rows('featured_slider') ) : the_row();
-					
+
 					if( get_row_layout() == 'posts' ):
 						?>
-						<?php 
+						<?php
 						$image = get_sub_field('thumbnail_1');
 						?>
-						
+
 						<div class="slide <?php if( $i == 0 ) { echo 'ani'; } ?> slide-article">
 							<div class="inner" <?php if( !empty($image) ): ?>style="background-image: url('<?php echo $image['sizes']['featured-slider']; ?>')"<?php endif; ?>>
-								<?php 
+								<?php
 								if( !empty($image) ): ?>
 									<img src="<?php echo $image['sizes']['featured-slider']; ?>" alt="<?php echo $image['alt']; ?>" />
 								<?php endif; ?>
@@ -42,33 +42,37 @@ get_header(); ?>
 										</a>
 									</div>
 									<div class="additional-teaser-wrapper">
+									<?php if (get_sub_field('title_2')) : ?>
 										<div class="additional-teaser">
 											<a class="no-style" href="<?php echo get_sub_field('url_2')['url']; ?>" target="<?php echo get_sub_field('url_2')['target']; ?>" title="<?php echo get_sub_field('url_3')['title']; ?>">
 												<h2 class="headline"><?php the_sub_field('title_2') ?></h2>
 												<p><?php the_sub_field('teaser_text_2') ?></p>
 											</a>
 										</div>
+									<?php endif; ?>
+									<?php if (get_sub_field('title_3')) : ?>
 										<div class="additional-teaser">
 											<a class="no-style" href="<?php echo get_sub_field('url_3')['url']; ?>" target="<?php echo get_sub_field('url_3')['target']; ?>" title="<?php echo get_sub_field('url_3')['title']; ?>">
 												<h2 class="headline"><?php the_sub_field('title_3') ?></h2>
 												<p><?php the_sub_field('teaser_text_3') ?></p>
 											</a>
 										</div>
+									<?php endif; ?>
 									</div>
 								</div>
 							</div>
-							
+
 							<div class="overlay"></div>
-							
+
 						</div>
 						<?php
 
-					elseif( get_row_layout() == 'video' ): 
+					elseif( get_row_layout() == 'video' ):
 						?>
 
 						<div class="slide <?php if( $i == 0 ) { echo 'ani'; } ?> slide-video">
-							
-							
+
+
 								<div class="video-wrapper">
 									<?php
 										if( get_sub_field('video_host') == "YouTube" ){
@@ -104,17 +108,17 @@ get_header(); ?>
 									?>
 
 								</div>
-							
-							
+
+
 							<div class="overlay"></div>
-							
+
 						</div>
 
 						<?php
 					endif;
-					
+
 					$i++;
-				
+
 				endwhile;
 				?>
 			</div>
@@ -123,7 +127,7 @@ get_header(); ?>
 	<?php
 	else :
 	endif;
-	?>	
+	?>
 </div>
 
 <div class="container">
@@ -136,7 +140,7 @@ get_header(); ?>
 			</div>
 		</div>
 	</div>
-	
+
 	<div class="row" style="display:none;">
 		<div class="col-sm-12">
 			<ul class="filter">
@@ -145,15 +149,15 @@ get_header(); ?>
 			</ul>
 		</div>
 	</div>
-	
+
 	<div class="row">
 		<div class="slider-products-wrapper active" id="most-recent">
 			<div class="slider-products">
-				<?php 
+				<?php
 				query_posts(array( 'post_type' => 'post', 'posts_per_page' => 12 ));
 				if ( have_posts() ) {
 					while ( have_posts() ) {
-						the_post(); 
+						the_post();
 						?>
 						<div class="col-sm-3">
 							<div class="teaser">
@@ -174,13 +178,13 @@ get_header(); ?>
 				?>
 			</div>
 		</div>
-		
+
 		<div class="slider-products-wrapper" id="most-read">
-			<?php 
+			<?php
 				query_posts(array( 'post_type' => 'post', 'posts_per_page' => 12 ));
 				if ( have_posts() ) {
 					while ( have_posts() ) {
-						the_post(); 
+						the_post();
 						if ( get_field('most_read') == 1 ) {
 						?>
 							<div class="col-sm-3">
@@ -214,14 +218,14 @@ get_header(); ?>
 			</div>
 		</div>
 	</div>
-	
-	<?php 
+
+	<?php
 	query_posts(array( 'post_type' => 'people' ));
 	if ( have_posts() ) {
 		$i = 1;
 		$open = false;
 		while ( have_posts() ) {
-			the_post(); 
+			the_post();
             if ($i == 1) { echo '<div class="inital">'; }
 			if ( $i % 2 == 1 ) { echo '<div class="row">'; $open = true; };
 			?>
@@ -300,7 +304,7 @@ get_header(); ?>
 <div class="container">
 	<div class="row">
 		<div class="col-sm-12">
-			
+
 		</div>
 	</div>
 	<div class="row flex">
@@ -340,7 +344,7 @@ get_header(); ?>
 				<div class="newsletter-wrapper">
 					<div class="row">
 						<div class="col-sm-6 left">
-							<?php 
+							<?php
 							$image = get_field('image_newsletter', $id);
 							if( !empty($image) ): ?>
 								<img src="<?php echo $image['sizes']['newsletter']; ?>" alt="<?php echo $image['alt']; ?>" />
@@ -424,5 +428,4 @@ else :
 endif;
 ?>
 
-
-<?php get_footer(); 
+<?php get_footer(); ?>
