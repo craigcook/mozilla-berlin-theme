@@ -87,9 +87,9 @@
 .teaser {
 	font-size: 1.111em;
 	img {
-		@include prefix ( transition, all .75s ease, moz webkit o )
+		@include prefix ( transition, all .75s ease, moz webkit o );
 		&:hover {
-			@include prefix ( transform, scale(1.1), moz webkit o )
+			@include prefix ( transform, scale(1.1), moz webkit o );
 		}
 	}
 	.headline {
@@ -178,9 +178,9 @@
 	}
 	img {
 //		display: inline-block;
-		@include prefix ( transition, all .75s ease, moz webkit o )
+		@include prefix ( transition, all .75s ease, moz webkit o );
 		&:hover {
-			@include prefix ( transform, scale(1.1), moz webkit o )
+			@include prefix ( transform, scale(1.1), moz webkit o );
 		}
 	}
 }
@@ -269,7 +269,7 @@
 	}
 	&:hover {
 		.background {
-			@include prefix ( transform, scale(1.1), moz webkit o )
+			@include prefix ( transform, scale(1.1), moz webkit o );
 		}
 	}
 	.background {
@@ -374,7 +374,7 @@
     }
 	&:hover {
 		.background {
-			@include prefix ( transform, scale(1.1), moz webkit o )
+			@include prefix ( transform, scale(1.1), moz webkit o );
 		}
 	}
 	.background {
@@ -386,7 +386,7 @@
 		background-size: cover;
 		background-position: center;
 		z-index: 1;
-		@include prefix ( transition, all .75s ease, moz webkit o )
+		@include prefix ( transition, all .75s ease, moz webkit o );
 	}
 	&:hover {
 		background-size: cover 110%;

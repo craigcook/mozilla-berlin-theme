@@ -161,9 +161,9 @@
 						position: absolute;
 						left: 50%;
 						top: 50%;
-						@include prefix( transform, translate(-50%,-50%), moz webkit o )
+						@include prefix( transform, translate(-50%,-50%), moz webkit o );
 					}
-					@include prefix( border-radius, 10000px, moz webkit o )
+					@include prefix( border-radius, 10000px, moz webkit o );
 					&:first-child {
 						margin-left: 0;
 					}
@@ -320,7 +320,7 @@
 				opacity: 1;
 			}
 		}
-		
+
 	}
 	.twoxone {
 		.expert-wrapper {

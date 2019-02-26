@@ -4,19 +4,6 @@
     height: 600px;
     position: relative;
     margin-bottom: $grid-gutter-width*2;
-    &:after {
-        content: '';
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        height: 50%;
-        width: 100%;
-        z-index: 1;
-        /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,000000+100&0+0,0.3+100 */
-		background: -moz-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.4) 100%); /* FF3.6-15 */
-		background: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.4) 100%); /* Chrome10-25,Safari5.1-6 */
-		background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,0.4) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    }
 }
 
 .responsive-headline {
@@ -29,21 +16,23 @@
 }
 
 .intro-text-wrapper {
-	//padding-top: 20em;
-	//padding-bottom: 3em;
-	//margin-bottom: 1.4em;
-	color: $white;
-	font-size: 1.45em;
-    position: absolute;
-    bottom: $grid-gutter-width*2;
-    width: 100%;
+    background: rgba(0, 0, 0, .4);
+    bottom: $grid-gutter-width * 2;
+    color: $white;
+    display: none;
+    font-size: 1.45em;
     left: 0;
+    padding: 20px 0;
+    position: absolute;
+    text-shadow: 0 0 3px rgba(0, 0, 0, .1);
+    width: 100%;
     z-index: 2;
-	display: none;
-	@media (min-width: $screen-sm-min) {
+
+    @media (min-width: $screen-sm-min) {
 		display: block;
 	}
-	h1 {
+
+    h1 {
 		font-size: 2.45em;
         line-height: 1.1em;
         margin-bottom: .4em;
@@ -125,7 +114,7 @@
 	.slick-dots {
 		margin-top: $grid-gutter-width/3;
 	}
-	
+
 }
 
 .intro-text {
@@ -140,7 +129,7 @@
     font-size: 1.15em;
     line-height: 1.5em;
     div {
-        
+
     }
     .headline {
 		color: $white;
